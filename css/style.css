@@ -610,10 +610,3 @@ body.dark-theme .highlighted-title-black {
         width: calc(50% - 1.25rem); /* Ajusta a largura para 50% */
     }
 }
-
-/* Exemplo para telas maiores que 1024px */
-@media (min-width: 1024px) {
-    .plan, .feedback-user {
-        width: calc(25% - 1.25rem); /* Ajusta a largura para 25% */
-    }
-}
