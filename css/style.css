@@ -16,6 +16,7 @@ body {
     line-height: 1.6;
     background-color: var(--cor-fundo);
     color: var(--cor-texto);
+    width: 100%;
 }
 
 .text-information {
@@ -43,10 +44,6 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center; /* Centraliza os cartões */
-}
-
-.hero-options {
-    display: flex;
 }
 
 .feedback-user {
@@ -82,6 +79,8 @@ header {
     padding: 0.625rem 0; /* 10px */
     text-align: center;
     font-size: 2.5rem; /* 40px */
+    width: 100%;
+    align-items: center;
 }
 
 /* === Títulos da Página === */
@@ -93,6 +92,13 @@ header {
 }
 
 /* === Imagens e Ícones === */
+
+.toggle-theme {
+    display:none;
+    height: auto;
+    margin: 0 0 0 94%;
+}
+
 .banner-1 {
     width: 50%;
     height: auto;
@@ -131,33 +137,7 @@ header {
     margin: 1rem 0;
 }
 
-.button-index:hover {
-    background-color: #ffffff;
-    color: #940101;
-    border: 0.125rem solid #940101; /* 2px */
-}
-
-.button-nao-encontrou:hover {
-    background-color: var(--cor-primaria);
-    color: white;
-    transition: background-color 0.3s, color 0.3s, transform 0.3s;
-}
-
-.toggle-theme-button:hover {
-    background-color: #121212;
-}
-
-.button-escolher-operacoes {
-    background-color: rgb(0, 0, 0);
-    color: #000000;
-    padding: 0.625rem; /* 10px */
-    display: flex;
-    border: 0.0625rem solid #940101; /* 1px */
-    border-radius: 1.25rem; /* 20px */
-    margin: 0.625rem; /* 10px */
-}
-
-.hero-button, .button-nao-encontrou, .toggle-theme-button, .button-index {
+.option-button, .button-nao-encontrou, .toggle-theme-button, .button-index {
     background-color: #ffffff;
     color: #940101;
     border: 0.125rem solid #940101; /* 2px */
@@ -177,10 +157,10 @@ header {
     transition: background-color 0.3s;
 }
 
-.hero-button {
-    padding: 0.4375rem 1.25rem; /* 7px 20px */
-    margin: 0.9375rem; /* 15px */
-    width: 90%;
+.button-index:hover {
+    background-color: #ffffff;
+    color: #940101;
+    border: 0.125rem solid #940101; /* 2px */
 }
 
 .button-nao-encontrou {
@@ -189,7 +169,33 @@ header {
     font-size: 1.125rem; /* 18px */
 }
 
+.button-nao-encontrou:hover {
+    background-color: var(--cor-primaria);
+    color: white;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+.option-button {
+    display: none;
+    background-color: #ffffff;
+    color: #940101;
+    border: 2px solid #940101;
+    border-radius: 0.9375rem; /* 15px */
+    padding: 0.625rem 1.25rem; /* 10px e 20px em rem*/
+    font-size: 1rem; /* 16px */
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+.option-button:hover {
+    background-color: #940101;
+    color: #ffffff;
+    transition: transform 0.3s, box-shadow 0.3s;
+    transform: scale(1.01);
+}
+
 .toggle-theme-button {
+    display: none;
     background-color: #000000;
     color: #ffffff;
     border: none;
@@ -197,17 +203,26 @@ header {
     padding: 0.625rem 0.9375rem; /* 10px 15px */
     font-size: 0.625rem; /* 10px */
     display: flex;
+    margin: 0 0 0 0;
     align-items: center;
-    margin: 0 0 0 92%;
     transition: background-color 0.3s;
 }
 
-.hero-button:hover {
-    background-color: #940101;
-    color: #ffffff;
-    transition: transform 0.3s, box-shadow 0.3s;
-    transform: scale(1.05);
+.toggle-theme-button:hover {
+    background-color: #121212;
 }
+
+.button-escolher-operacoes {
+    background-color: rgb(0, 0, 0);
+    color: #000000;
+    padding: 0.625rem; /* 10px */
+    display: flex;
+    border: 0.0625rem solid #940101; /* 1px */
+    border-radius: 1.25rem; /* 20px */
+    margin: 0.625rem; /* 10px */
+}
+
+
 
 .close-button {
     background-color: #940101; /* Cor do botão de fechar */
@@ -300,34 +315,36 @@ body.dark-theme .toggle-theme-button:hover {
 }
 
 /* === Seção Hero === */
-.hero-content {
-    background-color: #f5f5f5;
-    padding: 0.625rem; /* 10px */
-    border-radius: 0.3125rem; /* 5px */
+.options {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Alinhamento lado a lado */
+    margin: 1.25rem 0; /* 20px */
 }
 
-.hero-information {
-    background-color: #f9f9f9;
-    border: 1px solid #ccc;
-    border-radius: 0.5rem; /* 8px */
-    box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.1);
+.options-content {
+    background-color: white;
+}
+
+.hero-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centraliza os cartões */
+}
+
+.option {
+    box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.1); /* Sombra leve */
+    background-color: #f9f9f9; /* Fundo claro para os planos */
+    border: 1px solid #ccc; /* Borda leve */
+    border-radius: 0.5rem; /* Bordas arredondadas */
     margin: 0.625rem; /* 10px */
     padding: 1.25rem; /* 20px */
     text-align: center;
     color: black;
+    transition: transform 0.3s, box-shadow 0.3s; /* Transição suave */
 }
 
-.hero-information h3 {
-    padding: 0.3125rem; /* 5px */
-    border-radius: 0.9375rem; /* 15px */
-    color: #940101;
-}
-
-.hero-information p {
-    margin: 0.625rem; /* 10px */
-}
-
-.hero-information:hover {
+.option:hover {
     transition: transform 0.3s, box-shadow 0.3s;
     transform: scale(1.02);
     box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.2);
@@ -335,8 +352,8 @@ body.dark-theme .toggle-theme-button:hover {
 
 .option-icon {
     width: 3.125rem; /* 50px */
-    height: auto;
-    margin-bottom: 0.625rem; /* 10px */
+    height: auto; /* Mantém a proporção */
+    margin-bottom: 0.625rem; /* Espaçamento abaixo do ícone */
 }
 
 /* === Navegação === */
@@ -584,6 +601,11 @@ body.dark-theme .highlighted-title-black {
     color: #000;
     background-color: #fff;
 }
+
+/* ========================= */
+/* ========================= */
+/* ========================= */
+/* ========================= */
 
 /* === Responsividade === */
 @media (max-width: 768px) {
