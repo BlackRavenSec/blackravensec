@@ -8,9 +8,11 @@
 </head>
 <body>
     <header>
-        <img src="images/banner-1.png" alt="Banner" class="banner-1">
+        <div class="toggle-theme">
+            <button id="toggle-theme" class="toggle-theme-button">Modo Dark</button>
+        </div>
 
-        <button id="toggle-theme" class="toggle-theme-button">Modo Dark</button>
+        <img src="images/banner-1.png" alt="Banner" class="banner-1">
         
         <nav>
             <ul>
@@ -22,32 +24,32 @@
     </header>
 
     <main>
-        <section class="hero">
+        <section class="options">
             <h1 class="highlighted-title-black">SERVIÇOS</h1>
-            <div class="hero-content">
-                <div class="hero-options">
-                    <div class="hero-information">
-                    <img class="option-icon" src="images/icons/magnifier.png">
-                    <h3>OPERAÇÕES DE INTELIGÊNCIA</h3>
+            <div class="options-content">
+                <div class="options-container">
+                    <div class="option">
+                        <img class="option-icon" src="images/icons/magnifier.png">
+                        <h3>OPERAÇÕES DE INTELIGÊNCIA</h3>
                         <p>Nossas operações de inteligência utilizam técnicas avançadas de Open Source Intelligence (OSINT) para coletar informações de pessoas em geral, empresas e organizações; investigar golpistas e fraudadores; rastrear indivíduos; autenticar veracidade de perfis online e muito mais</p>
-                        <button class="hero-button">VER</button>
+                        <button class="option-button">VER</button>
                     </div>
 
-                    <div class="hero-information">
+                    <div class="option">
                         <img class="option-icon" src="images/icons/icons8-bug-attack-with-warning-alert-isolated-on-white-background-96.png">
                         <h3>OPERAÇÕES DE HACKING ÉTICO</h3>
                         <p>Test
                             amos e reforçamos a segurança do ambiente digital de pessoas, empresas e organizações com simulações realistas de ataques cibernéticos. Identificamos vulnerabilidades em redes, aplicações e sistemas, garantindo que esteja protegida contra invasões, vazamentos de dados e outras ameaças cibernéticas.
                         </p>
-                        <button class="hero-button">VER</button>
+                        <button class="option-button">VER</button>
                     </div>
 
-                    <div class="hero-information">
+                    <div class="option">
                         <img class="option-icon" src="images/icons/icons8-social-engineering-96.png">
                         <h3>OPERAÇÕES DE ENGENHARIA SOCIAL</h3>
                         <p>A segurança digital vai além da tecnologia: testamos a resiliência humana contra ataques de engenharia social. Identificamos falhas em processos e fraquezas de colaboradores, conscientizamos equipes e criamos estratégias para mitigar riscos de phishing, manipulação psicológica e fraudes baseadas em interação humana.
                         </p>
-                        <button class="hero-button">VER</button>
+                        <button class="option-button">VER</button>
                     </div>
                 </div>
 
@@ -1698,17 +1700,15 @@
                         <blockquote>MEU DEPOIMENTO</blockquote>
                     </div>
                 </div>
-                    <div class="nao-encontrou">
-                        <button class="button-nao-encontrou" onclick="window.location.href='https://wa.me/5511999999999'">FALE CONOSCO</button>
-                        <p>Chame-nos no WhatsApp e faremos uma investigação personalizada para você!</p>
-                    </div>
             </div>
         </section>
 
         <section class="cta">
             <h3 class="highlighted-title-end">ENTRE EM CONTATO</h3>
-            <p>Tem dúvidas sobre nossos planos? Fale conosco pelo WhatsApp!</p>
-            <button class="button-nao-encontrou" onclick="window.location.href='https://wa.me/5511999999999'">FALE CONOSCO</button>
+            <div class="nao-encontrou">
+                <button class="button-nao-encontrou" onclick="window.location.href='https://wa.me/5511999999999'">FALE CONOSCO</button>
+                <p>Chame-nos no WhatsApp e faremos uma investigação personalizada para você!</p>
+            </div>
         </section>
     </main>
 
