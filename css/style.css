@@ -455,6 +455,7 @@ h1, h2 {
     padding: 1.25rem; /* Espaçamento interno */
     text-align: center; /* Centraliza o texto */
     width: 96%;
+    align-items: center;
 }
 
 /* === Estilo para a seção de pacotes === */
