@@ -1,1 +1,611 @@
+/* === Variáveis de Cores === */
+:root {
+    --cor-primaria: #940101; /* Vermelho escuro - usado em cabeçalhos e botões */
+    --cor-secundaria: #ffffff; /* Branco - fundo e texto secundário */
+    --cor-texto: #000000; /* Preto - texto principal */
+    --cor-fundo: #f9f9f9; /* Fundo claro da página */
+    --cor-fundo-escuro: #121212; /* Fundo escuro para tema escuro */
+    --cor-texto-escuro: #ffffff; /* Texto claro para tema escuro */
+}
 
+/* === Estilos Gerais === */
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+}
+
+.text-information {
+    margin-left: 0.5625rem; /* 9px */
+}
+
+/* === Estrutura e Layout === */
+.about,
+.cta,
+.testimonials {
+    display: flex;
+    flex-direction: column;
+}
+
+.testimonials {
+    justify-content: space-between;
+    margin: 1.25rem 0; /* 20px */
+}
+
+.feedback-content {
+    background-color: var(--cor-secundaria);
+}
+
+.feedback-users, .plan-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centraliza os cartões */
+}
+
+.hero-options {
+    display: flex;
+}
+
+.feedback-user {
+    box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.1); /* 2px 10px */
+    background-color: var(--cor-fundo);
+    border: 1px solid #ccc;
+    border-radius: 0.5rem; /* 8px */
+    margin: 1.25rem; /* 20px */
+    padding: 1.25rem; /* 20px */
+    text-align: center;
+    color: var(--cor-texto);
+    width: 20%;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feedback-user p {
+    margin: 0.625rem 0; /* 10px */
+}
+
+.feedback-user h3 {
+    color: var(--cor-primaria);
+}
+
+.feedback-user:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.2); /* 4px 20px */
+}
+
+/* === Cabeçalho === */
+header {
+    background: var(--cor-primaria);
+    color: var(--cor-secundaria);
+    padding: 0.625rem 0; /* 10px */
+    text-align: center;
+    font-size: 2.5rem; /* 40px */
+}
+
+/* === Títulos da Página === */
+.page-titles {
+    padding: 0.625rem 0; /* 10px */
+    text-align: center;
+    font-size: 2.5rem; /* 40px */
+    text-transform: uppercase;
+}
+
+/* === Imagens e Ícones === */
+.banner-1 {
+    width: 50%;
+    height: auto;
+    margin: 1.25rem 7%; /* 20px */
+}
+
+.direitos-reservados {
+    font-size: 0.625rem; /* 10px */
+    margin: 1.25rem; /* 20px */
+}
+
+.social_media-icons-footer {
+    width: 1.8%;
+    height: auto;
+    display: inline-table;
+    margin: 0.125rem 0.3125rem; /* 2px 5px */
+}
+
+.logo {
+    width: 10%;
+    height: auto;
+    margin-right: 0.625rem; /* 10px */
+}
+
+/* === Seção de Boas-Vindas === */
+.welcome-title, 
+.welcome-text {
+    text-align: center;
+}
+
+/* === Botões === */
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.button-index:hover {
+    background-color: #ffffff;
+    color: #940101;
+    border: 0.125rem solid #940101; /* 2px */
+}
+
+.button-nao-encontrou:hover {
+    background-color: var(--cor-primaria);
+    color: white;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+.toggle-theme-button:hover {
+    background-color: #121212;
+}
+
+.button-escolher-operacoes {
+    background-color: rgb(0, 0, 0);
+    color: #000000;
+    padding: 0.625rem; /* 10px */
+    display: flex;
+    border: 0.0625rem solid #940101; /* 1px */
+    border-radius: 1.25rem; /* 20px */
+    margin: 0.625rem; /* 10px */
+}
+
+.hero-button, .button-nao-encontrou, .toggle-theme-button, .button-index {
+    background-color: #ffffff;
+    color: #940101;
+    border: 0.125rem solid #940101; /* 2px */
+    border-radius: 0.625rem; /* 10px */
+    padding: 0.75rem 0; /* cursor: pointer; */
+    cursor: pointer;
+}
+
+.button-index {
+    background-color: #940101;
+    color: #fff;
+    border: none;
+    border-radius: 0.9375rem; /* 15px */
+    padding: 0.625rem 1.25rem; /* 10px e 20px em rem*/
+    font-size: 1rem; /* 16px */
+    margin: 0 0.625rem; /* 10px */
+    transition: background-color 0.3s;
+}
+
+.hero-button {
+    padding: 0.4375rem 1.25rem; /* 7px 20px */
+    margin: 0.9375rem; /* 15px */
+    width: 90%;
+}
+
+.button-nao-encontrou {
+    margin: 1.5625rem 0 -0.1875rem; /* 25px -3px */
+    width: 96%;
+    font-size: 1.125rem; /* 18px */
+}
+
+.toggle-theme-button {
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    border-radius: 0.9375rem; /* 15px */
+    padding: 0.625rem 0.9375rem; /* 10px 15px */
+    font-size: 0.625rem; /* 10px */
+    display: flex;
+    align-items: center;
+    margin: 0 0 0 92%;
+    transition: background-color 0.3s;
+}
+
+.hero-button:hover {
+    background-color: #940101;
+    color: #ffffff;
+    transition: transform 0.3s, box-shadow 0.3s;
+    transform: scale(1.05);
+}
+
+.close-button {
+    background-color: #940101; /* Cor do botão de fechar */
+    color: #fff;
+    border: none;
+    border-radius: 0.9375rem; /* 15px */
+    padding: 0.625rem 0.3125rem; /* 10px 5px */
+    padding-right: 1.3125rem; /* 21px */
+    margin-top: 0.625rem; /* 10px */
+    display: flex; /* Adiciona flexbox */
+    align-items: center; /* Alinha verticalmente */
+    justify-items: auto;
+    cursor: pointer;
+}
+
+.close-button:hover {
+    background-color: rgb(0, 0, 0);
+    color: #ffffff;
+}
+
+.close-button img {
+    margin-left: 0.5rem; /* Espaço entre o texto e o ícone */
+    margin-bottom: -0.025rem; /* -0.4px */
+    width: 1.0625rem; /* 17px */
+    height: auto; /* Ajuste o tamanho do ícone conforme necessário */
+}
+
+.button-price {
+    background-color: #ffffff;
+    color: #006003;
+    border: 0.0625rem solid #006003; /* 1px */
+    border-radius: 0.625rem; /* 10px */
+    padding: 0.3125rem 6.25rem; /* 5px 100px */
+    margin-top: 1.25rem; /* 20px */
+    margin-bottom: 1.25rem; /* 20px */
+    font-size: 0.9375rem; /* 15px */
+    text-align: center;
+    align-items: center;
+}
+
+.button-whatsapp {
+    background-color: #4CAF50;
+    color: #ffffff;
+    border: 0.0625rem #ffffff solid; /* 1px */
+    border-radius: 0.9375rem; /* 15px */
+    margin-top: 0.625rem; /* 10px */
+    padding: 0.625rem 6.25rem; /* 10px 100px */
+    font-size: 1.0625rem; /* 17px */
+    align-items: center;
+    cursor: pointer;
+}
+
+.icon-button-whatsapp {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0.125rem; /* 2px */
+    margin-right: 12.5rem; /* 200px */
+    width: 1.25rem; /* 20px */
+    height: auto;
+    padding: 0;
+    align-items: center;
+}
+
+.button-whatsapp:hover {
+    background-color: #ffffff;
+    color: #4CAF50;
+    border: 0.0625rem solid #4CAF50; /* 1px */
+    transition: transform 0.3s, box-shadow 0.3s; /* Transição suave */
+    transform: scale(1.03); /* Aumenta o tamanho ao passar o mouse */
+}
+
+body.dark-theme .toggle-theme-button {
+    background-color: white;
+    color: black;
+}
+
+body.dark-theme .toggle-theme-button:hover {
+    background-color: #940101;
+    color: white;
+    transition: background-color 0.3s; /* Transição suave */
+}
+
+.button.dark-theme {
+    background-color: #ffffff;
+    color: #940101;
+}
+
+.button.dark-theme:hover {
+    color: #000000;
+}
+
+/* === Seção Hero === */
+.hero-content {
+    background-color: #f5f5f5;
+    padding: 0.625rem; /* 10px */
+    border-radius: 0.3125rem; /* 5px */
+}
+
+.hero-information {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem; /* 8px */
+    box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.1);
+    margin: 0.625rem; /* 10px */
+    padding: 1.25rem; /* 20px */
+    text-align: center;
+    color: black;
+}
+
+.hero-information h3 {
+    padding: 0.3125rem; /* 5px */
+    border-radius: 0.9375rem; /* 15px */
+    color: #940101;
+}
+
+.hero-information p {
+    margin: 0.625rem; /* 10px */
+}
+
+.hero-information:hover {
+    transition: transform 0.3s, box-shadow 0.3s;
+    transform: scale(1.02);
+    box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.2);
+}
+
+.option-icon {
+    width: 3.125rem; /* 50px */
+    height: auto;
+    margin-bottom: 0.625rem; /* 10px */
+}
+
+/* === Navegação === */
+nav ul {
+    list-style: none;
+    padding: 0;
+    font-size: 0.8125rem; /* 13px */
+    margin: auto 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 0.9375rem; /* 15px */
+}
+
+nav ul li a {
+    color: #fff; /* Links brancos */
+    text-decoration: none;
+}
+
+/* === Seções Gerais === */
+section {
+    padding: 1.25rem; /* 20px */
+}
+
+/* === Rodapé === */
+footer {
+    text-align: center;
+    padding: 0.625rem 0; /* 10px */
+    background: #940101; /* Rodapé em vermelho escuro */
+    color: #fff; /* Texto branco no rodapé */
+    margin-top: 1.25rem; /* 20px */
+}
+
+/* === Títulos === */
+h1, h2 {
+    color: #940101; /* Títulos em vermelho */
+}
+
+/* === Planos (Seção de Preços ou Serviços) === */
+.plans {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Alinhamento lado a lado */
+    margin: 1.25rem 0; /* 20px */
+}
+
+.plan-content {
+    background-color: white;
+}
+
+.plan {
+    box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.1); /* Sombra leve */
+    background-color: #f9f9f9; /* Fundo claro para os planos */
+    border: 1px solid #ccc; /* Borda leve */
+    border-radius: 0.5rem; /* Bordas arredondadas */
+    margin: 0.625rem; /* 10px */
+    padding: 1.25rem; /* 20px */
+    text-align: center;
+    color: black;
+    transition: transform 0.3s, box-shadow 0.3s; /* Transição suave */
+}
+
+.plan:hover {
+    transform: scale(1.05); /* Aumenta o tamanho ao passar o mouse */
+    box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.2); /* Sombra mais intensa */
+}
+
+.plan-icon {
+    width: 3.125rem; /* 50px */
+    height: auto; /* Mantém a proporção */
+    margin-bottom: 0.625rem; /* Espaçamento abaixo do ícone */
+}
+
+.plan-features {
+    list-style: none; /* Remove os marcadores padrão */
+    padding: 0; /* Remove o padding padrão */
+    text-align: left; /* Alinha o texto à esquerda */
+    margin: 0.625rem 0; /* Margem superior e inferior */
+}
+
+.plan-features p {
+    display: flex; /* Usar flexbox para alinhar ícones e texto */
+    align-items: center; /* Alinha verticalmente os itens */
+    margin: 0.3125rem 0; /* Margem entre os itens */
+}
+
+.feature-icon, .feature-icon-rejected {
+    width: 1.25rem; /* Ajuste o tamanho do ícone */
+    height: auto;
+    margin-bottom: -0.3rem; /* -0.4px */
+    margin-right: 0.610rem; /* 10px */
+    align-items: center;
+}
+
+.nao-encontrou {
+    color: #000000; /* Cor do texto padrão */
+    border: none; /* Remove borda desnecessária */
+    border-radius: 0.5rem; /* Bordas arredondadas */
+    margin: 0; /* Remove margens desnecessárias */
+    padding: 1.25rem; /* Espaçamento interno */
+    text-align: center; /* Centraliza o texto */
+    width: 96%;
+}
+
+/* === Estilo para a seção de pacotes === */
+.package-section {
+    display: none; /* Inicialmente escondido */
+    background-color: #f9f9f9;
+    padding: 1.25rem; /* 20px */
+    border: 1px solid #940101;
+    border-radius: 0.5rem; /* 8px */
+    margin: 1.25rem 1.25rem 0.625rem 0.625rem; /* 20px 20px 10px 10px */
+    width: 96%;
+}
+
+.package-section h3 {
+    color: #000;
+}
+
+.package-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.package {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem; /* 8px */
+    margin: 0.610rem; /* 10px */
+    padding: 1.25rem; /* 20px */
+    color: black;
+    box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.1);
+    align-items: center;
+}
+
+.package:hover {
+    transition: transform 0.3s, box-shadow 0.3s;
+    transform: scale(1.05);
+    box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.2);
+}
+
+.package h4 {
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+.package-icon {
+    width: 2.5rem; /* 40px */
+    height: 2.5rem; /* 40px */
+    margin-bottom: 0.3125rem; /* 5px */
+}
+
+.package-icon-premium {
+    width: 1.875rem; /* 30px */
+    margin-bottom: 0.625rem; /* 10px */
+}
+
+.package-premium {
+    background-color: #131313;
+    color: #fff;
+    border: 1px solid #940101;
+    border-radius: 0.5rem; /* 8px */
+    padding: 0.9375rem; /* 15px */
+    margin: 0.625rem; /* 10px */
+    text-align: center;
+    flex: 1 1 calc(25% - 1.25rem); /* 20px */
+    box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.1);
+}
+
+.price {
+    display: flex;
+}
+
+/* === Títulos em Maiúsculo === */
+h1, h2, h3 {
+    text-transform: uppercase;
+}
+
+.highlighted-title, .highlighted-title-black {
+    font-size: 2.5rem; /* 40px */
+    color: #fff;
+    padding: 0.625rem; /* 10px */
+    border-radius: 0.3125rem; /* 5px */
+    text-align: center;
+    margin: 1.25rem 0; /* 20px */
+}
+
+.highlighted-title {
+    background-color: #940101;
+}
+
+.highlighted-title-end {
+    font-size: 1.5rem; /* 24px */
+    color: #940101;
+    background-color: #fff;
+    padding: 0.625rem; /* 10px */
+    border: 0.125rem solid #940101; /* 2px */
+    border-radius: 0.3125rem; /* 5px */
+    text-align: center;
+    margin: 1.25rem 0; /* 20px */
+}
+
+.highlighted-title-black {
+    background-color: #000;
+}
+
+/* === MODO DARK === */
+body.dark-theme {
+    background-color: #121212;
+    color: #fff;
+}
+
+header.dark-theme {
+    background: #1e1e1e;
+}
+
+body.dark-theme .nao-encontrou {
+    color: #fff;
+}
+
+body.dark-theme .package-section {
+    background-color: #1e1e1e;
+    color: white;
+    border-color: white;
+}
+
+body.dark-theme .package-section h3 {
+    color: white;
+}
+
+body.dark-theme .package {
+    background-color: white;
+    color: black;
+    border-color: #940101;
+}
+
+body.dark-theme .highlighted-title-black {
+    color: #000;
+    background-color: #fff;
+}
+
+/* === Responsividade === */
+@media (max-width: 768px) {
+    .feedback-user {
+        width: 100%; /* Ajusta a largura para 100% em telas pequenas */
+    }
+
+    .hero-button {
+        width: 100%; /* Botão ocupa toda a largura */
+    }
+}
+
+/* Exemplo para telas entre 768px e 1024px */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .plan, .feedback-user {
+        width: calc(50% - 1.25rem); /* Ajusta a largura para 50% */
+    }
+}
+
+/* Exemplo para telas maiores que 1024px */
+@media (min-width: 1024px) {
+    .plan, .feedback-user {
+        width: calc(25% - 1.25rem); /* Ajusta a largura para 25% */
+    }
+}
