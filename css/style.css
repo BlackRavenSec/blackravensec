@@ -16,7 +16,6 @@ body {
     line-height: 1.6;
     background-color: var(--cor-fundo);
     color: var(--cor-texto);
-    width: 100%;
 }
 
 .text-information {
@@ -79,8 +78,6 @@ header {
     padding: 0.625rem 0; /* 10px */
     text-align: center;
     font-size: 2.5rem; /* 40px */
-    width: 100%;
-    align-items: center;
 }
 
 /* === Títulos da Página === */
@@ -92,13 +89,6 @@ header {
 }
 
 /* === Imagens e Ícones === */
-
-.toggle-theme {
-    display:none;
-    height: auto;
-    margin: 0 0 0 94%;
-}
-
 .banner-1 {
     width: 50%;
     height: auto;
@@ -176,7 +166,6 @@ header {
 }
 
 .option-button {
-    display: none;
     background-color: #ffffff;
     color: #940101;
     border: 2px solid #940101;
@@ -194,20 +183,6 @@ header {
     transform: scale(1.01);
 }
 
-.toggle-theme-button {
-    display: none;
-    background-color: #000000;
-    color: #ffffff;
-    border: none;
-    border-radius: 0.9375rem; /* 15px */
-    padding: 0.625rem 0.9375rem; /* 10px 15px */
-    font-size: 0.625rem; /* 10px */
-    display: flex;
-    margin: 0 0 0 0;
-    align-items: center;
-    transition: background-color 0.3s;
-}
-
 .toggle-theme-button:hover {
     background-color: #121212;
 }
@@ -222,7 +197,18 @@ header {
     margin: 0.625rem; /* 10px */
 }
 
-
+.toggle-theme-button {
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    border-radius: 0.9375rem; /* 15px */
+    padding: 0.625rem 0.9375rem; /* 10px 15px */
+    font-size: 0.625rem; /* 10px */
+    display: flex;
+    align-items: center;
+    margin: 0 0 0 92%;
+    transition: background-color 0.3s;
+}
 
 .close-button {
     background-color: #940101; /* Cor do botão de fechar */
@@ -613,7 +599,7 @@ body.dark-theme .highlighted-title-black {
         width: 100%; /* Ajusta a largura para 100% em telas pequenas */
     }
 
-    .options-button {
+    .option-button {
         width: 100%; /* Botão ocupa toda a largura */
     }
 }
