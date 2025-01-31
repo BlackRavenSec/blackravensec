@@ -611,8 +611,12 @@ body.dark-theme .highlighted-title-black {
         width: 100%; /* Ajusta a largura para 100% em telas pequenas */
     }
 
-    .hero-button {
+    .option-button {
         width: 100%; /* Botão ocupa toda a largura */
+    }
+
+    .button-nao-encontrou {
+        widht: 100%;
     }
 }
 
@@ -621,6 +625,14 @@ body.dark-theme .highlighted-title-black {
     .plan, .feedback-user {
         width: calc(50% - 1.25rem); /* Ajusta a largura para 50% */
     }
+    .button-nao-encontrou {
+        widht: 100%;
+    }
 }
 
 /* Exemplo para telas maiores que 1024px */
+@media (min-width: 1024px) {
+    .button-nao-encontrou {
+        widht: 100%;
+    }
+}
