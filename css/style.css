@@ -16,6 +16,7 @@ body {
     line-height: 1.6;
     background-color: var(--cor-fundo);
     color: var(--cor-texto);
+    width: 100%;
 }
 
 .text-information {
@@ -78,6 +79,8 @@ header {
     padding: 0.625rem 0; /* 10px */
     text-align: center;
     font-size: 2.5rem; /* 40px */
+    width: 100%;
+    align-items: center;
 }
 
 /* === Títulos da Página === */
@@ -311,7 +314,7 @@ body.dark-theme .toggle-theme-button:hover {
     color: #000000;
 }
 
-/* === Seção Hero === */
+/* === Seção Options === */
 .options {
     display: flex;
     flex-direction: column;
@@ -323,11 +326,10 @@ body.dark-theme .toggle-theme-button:hover {
     background-color: white;
 }
 
-.hero-container {
+.options-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center; /* Centraliza os cartões */
-    align-items: center;
 }
 
 .option {
@@ -455,7 +457,6 @@ h1, h2 {
     padding: 1.25rem; /* Espaçamento interno */
     text-align: center; /* Centraliza o texto */
     width: 96%;
-    align-items: center;
 }
 
 /* === Estilo para a seção de pacotes === */
@@ -612,12 +613,8 @@ body.dark-theme .highlighted-title-black {
         width: 100%; /* Ajusta a largura para 100% em telas pequenas */
     }
 
-    .option-button {
+    .options-button {
         width: 100%; /* Botão ocupa toda a largura */
-    }
-
-    .button-nao-encontrou {
-        widht: 100%;
     }
 }
 
@@ -626,14 +623,11 @@ body.dark-theme .highlighted-title-black {
     .plan, .feedback-user {
         width: calc(50% - 1.25rem); /* Ajusta a largura para 50% */
     }
-    .button-nao-encontrou {
-        widht: 100%;
-    }
 }
 
 /* Exemplo para telas maiores que 1024px */
 @media (min-width: 1024px) {
-    .button-nao-encontrou {
-        widht: 100%;
+    .plan, .feedback-user {
+        width: calc(25% - 1.25rem); /* Ajusta a largura para 25% */
     }
 }
