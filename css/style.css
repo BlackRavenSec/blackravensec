@@ -592,21 +592,3 @@ body.dark-theme .highlighted-title-black {
 /* ========================= */
 /* ========================= */
 /* ========================= */
-
-/* === Responsividade === */
-@media (max-width: 768px) {
-    .feedback-user {
-        width: 100%; /* Ajusta a largura para 100% em telas pequenas */
-    }
-
-    .option-button {
-        width: 100%; /* Botão ocupa toda a largura */
-    }
-}
-
-/* Exemplo para telas entre 768px e 1024px */
-@media (min-width: 768px) and (max-width: 1024px) {
-    .plan, .feedback-user {
-        width: calc(50% - 1.25rem); /* Ajusta a largura para 50% */
-    }
-}
