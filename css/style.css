@@ -327,6 +327,7 @@ body.dark-theme .toggle-theme-button:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: center; /* Centraliza os cartões */
+    align-items: center;
 }
 
 .option {
