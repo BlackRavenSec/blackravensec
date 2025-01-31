@@ -127,7 +127,7 @@ header {
     margin: 1rem 0;
 }
 
-.option-button, .button-nao-encontrou, .toggle-theme-button, .button-index {
+.option-button, .button-nao-encontrou, .button-index {
     background-color: #ffffff;
     color: #940101;
     border: 0.125rem solid #940101; /* 2px */
@@ -183,10 +183,6 @@ header {
     transform: scale(1.01);
 }
 
-.toggle-theme-button:hover {
-    background-color: #121212;
-}
-
 .button-escolher-operacoes {
     background-color: rgb(0, 0, 0);
     color: #000000;
@@ -195,19 +191,6 @@ header {
     border: 0.0625rem solid #940101; /* 1px */
     border-radius: 1.25rem; /* 20px */
     margin: 0.625rem; /* 10px */
-}
-
-.toggle-theme-button {
-    background-color: #000000;
-    color: #ffffff;
-    border: none;
-    border-radius: 0.9375rem; /* 15px */
-    padding: 0.625rem 0.9375rem; /* 10px 15px */
-    font-size: 0.625rem; /* 10px */
-    display: flex;
-    align-items: center;
-    margin: 0 0 0 92%;
-    transition: background-color 0.3s;
 }
 
 .close-button {
@@ -278,17 +261,6 @@ header {
     border: 0.0625rem solid #4CAF50; /* 1px */
     transition: transform 0.3s, box-shadow 0.3s; /* Transição suave */
     transform: scale(1.03); /* Aumenta o tamanho ao passar o mouse */
-}
-
-body.dark-theme .toggle-theme-button {
-    background-color: white;
-    color: black;
-}
-
-body.dark-theme .toggle-theme-button:hover {
-    background-color: #940101;
-    color: white;
-    transition: background-color 0.3s; /* Transição suave */
 }
 
 .button.dark-theme {
