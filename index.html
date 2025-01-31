@@ -3,13 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Black Raven Sec</title>
+    <title>Planos Black Raven Sec</title>
     <link rel="stylesheet" href="css/style.css"> <!-- Link para o CSS -->
 </head>
 <body>
     <header>
+        <div class="toggle-theme">
+            <button id="toggle-theme" class="toggle-theme-button">Modo Dark</button>
+        </div>
+
         <img src="images/banner-1.png" alt="Banner" class="banner-1">
-        <button id="toggle-theme" class="toggle-theme-button">Modo Dark</button>
+        
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -20,48 +24,1634 @@
     </header>
 
     <main>
-        <section class="hero">
-            <h1 class="highlighted-title-black">Bem-vindo à Black Raven Sec</h1>
-            <p>A Black Raven Sec é a empresa de OSINT e Hacking Ético que busca te proporcionar transparência e segurança digital.</p>
-            <button class="button-index" onclick="window.location.href='serviços.html'">Conheça Nossos Serviços</button>
-        </section>
-
-        <section class="about">
-            <h2 class="highlighted-title">Quem Somos</h2>
-            <p>A Black Raven Sec é uma empresa especializada em segurança digital e investigações. Nossa missão é garantir a proteção de dados e a segurança de nossos clientes, utilizando as melhores práticas e tecnologias disponíveis.</p>
-        </section>
-
-        <section class="services">
-            <h2 class="highlighted-title">Nossos Principais Serviços</h2>
-            <div class="hero-content">
-                <div class="hero-options">
-                    <div class="hero-information">
+        <section class="options">
+            <h1 class="highlighted-title-black">SERVIÇOS</h1>
+            <div class="options-content">
+                <div class="options-container">
+                    <div class="option">
                         <img class="option-icon" src="images/icons/magnifier.png">
                         <h3>OPERAÇÕES DE INTELIGÊNCIA</h3>
                         <p>Nossas operações de inteligência utilizam técnicas avançadas de Open Source Intelligence (OSINT) para coletar informações de pessoas em geral, empresas e organizações; investigar golpistas e fraudadores; rastrear indivíduos; autenticar veracidade de perfis online e muito mais</p>
-                        <button class="hero-button">VER</button>
+                        <button class="option-button">VER</button>
                     </div>
 
-                    <div class="hero-information">
+                    <div class="option">
                         <img class="option-icon" src="images/icons/icons8-bug-attack-with-warning-alert-isolated-on-white-background-96.png">
                         <h3>OPERAÇÕES DE HACKING ÉTICO</h3>
-                        <p>Testamos e reforçamos a segurança do ambiente digital de pessoas, empresas e organizações com simulações realistas de ataques cibernéticos. Identificamos vulnerabilidades em redes, aplicações e sistemas, garantindo que esteja protegida contra invasões, vazamentos de dados e outras ameaças cibernéticas.
+                        <p>Test
+                            amos e reforçamos a segurança do ambiente digital de pessoas, empresas e organizações com simulações realistas de ataques cibernéticos. Identificamos vulnerabilidades em redes, aplicações e sistemas, garantindo que esteja protegida contra invasões, vazamentos de dados e outras ameaças cibernéticas.
                         </p>
-                        <button class="hero-button">VER</button>
+                        <button class="option-button">VER</button>
                     </div>
 
-                    <div class="hero-information">
+                    <div class="option">
                         <img class="option-icon" src="images/icons/icons8-social-engineering-96.png">
                         <h3>OPERAÇÕES DE ENGENHARIA SOCIAL</h3>
                         <p>A segurança digital vai além da tecnologia: testamos a resiliência humana contra ataques de engenharia social. Identificamos falhas em processos e fraquezas de colaboradores, conscientizamos equipes e criamos estratégias para mitigar riscos de phishing, manipulação psicológica e fraudes baseadas em interação humana.
                         </p>
-                        <button class="hero-button">VER</button>
+                        <button class="option-button">VER</button>
                     </div>
                 </div>
+
+                <div class="nao-encontrou">
+                    <button class="button-nao-encontrou" onclick="window.location.href='https://wa.me/5511999999999'">FALE CONOSCO</button>
+                    <p>Chame-nos no WhatsApp e faremos uma investigação personalizada para você!</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="plans">
+            <h2 class="highlighted-title">OPERAÇÕES DE INTELIGÊNCIA</h2>
+            <div class="plan-content">    
+                <div class="plan-container">
+                    <div class="plan">
+                        <img src="images/icons/search_14180102.png" alt="Investigação Conjugal" class="plan-icon">
+                        <h3>INVESTIGAÇÃO CONJUGAL</h3>
+                        <p>Esta investigação é ideal para quem suspeita de traição e deseja obter provas concretas.</p>
+                        <button class="button-index" onclick="showPackages('investigacao-conjugal-packages')">VER PACOTES</button>
+                    </div>
+                    <div class="plan">
+                        <img src="images/icons/icons8-black-ski-mask-100.png" alt="Investigação de Golpes e Fraudes" class="plan-icon">
+                        <h3>INVESTIGAÇÃO DE GOLPES E FRAUDES</h3>
+                        <p>Esta investigação é voltada para quem caiu em um golpe/fraude ou está desconfiado de uma oferta suspeita.</p>
+                        <button class="button-index" onclick="showPackages('investigacao-golpes-packages')">VER PACOTES</button>
+                    </div>
+                    <div class="plan">
+                        <img src="images/icons/background-check.png" alt="Investigação de Antecedentes" class="plan-icon">
+                        <h3>INVESTIGAÇÃO DE ANTECEDENTES</h3>
+                        <p>Ideal para quem deseja verificar o passado de uma pessoa antes de um relacionamento amoroso, amizade ou contrato empresarial.</p>
+                        <button class="button-index" onclick="showPackages('investigacao-antecedentes-packages')">VER PACOTES</button>
+                    </div>
+                    <div class="plan">
+                        <img src="images/icons/company.png" alt="Investigação Empresarial" class="plan-icon">
+                        <h3>INVESTIGAÇÃO EMPRESARIAL</h3>
+                        <p>Para empresários que desejam garantir a idoneidade de seus parceiros e funcionários.</p>
+                        <button class="button-index" onclick="showPackages('investigacao-empresarial-packages')">VER PACOTES</button>
+                    </div>
+                    <div class="plan">
+                        <img src="images/icons/placeholder.png" alt="Rastreamento de Pessoas" class="plan-icon">
+                        <h3>RASTREAMENTO DE PESSOAS</h3>
+                        <p>Para quem precisa localizar um cônjuge, parente, amigo ou devedor desaparecido.</p>
+                        <button class="button-index" onclick="showPackages('rastreamento-pessoas-packages')">VER PACOTES</button>
+                    </div>
+                    <div class="plan">
+                        <img src="images/icons/icons8-id-verified-50.png" alt="Investigação de Identidade Social" class="plan-icon">
+                        <h3>INVESTIGAÇÃO DE VERACIDADE SOCIAL</h3>
+                        <p>Ideal para quem deseja confirmar a veracidade de perfis online.</p>
+                        <button class="button-index" onclick="showPackages('investigacao-identidade-packages')">VER PACOTES</button>
+                    </div>
+                    <div class="plan">
+                        <img src="images/icons/icons8-detective-64.png" alt="Investigacao Pessoal" class="plan-icon">
+                        <h3>INVESTIGAÇÃO PESSOAL</h3>
+                        <p>Para quem deseja investigar alguém ou até a se próprio a fim verificar se teve dados vazados e/ou informações sensíveis expostas.</p>
+                        <button class="button-index" onclick="showPackages('investigacao-pessoal-packages')">VER PACOTES</button>
+                    </div>
+                    <div class="plan">
+                        <img src="images/icons/icons8-advanced-search-50.png" alt="Investigação Avançada" class="plan-icon">
+                        <h3>INVESTIGAÇÃO AVANÇADA</h3>
+                        <p>Para empresas e indivíduos que precisam de uma investigação detalhada e profissional.</p>
+                        <button class="button-index" onclick="showPackages('investigacao-avancada-packages')">VER PACOTES</button>
+                    </div>
+                    <div class="plan">
+                        <img src="images/icons/icons8-secret-agent-64.png" alt="Operação Shelock" class="plan-icon">
+                        <h3>OPERAÇÃO SHERLOCK HOLMES</h3>
+                        <p>Para governos, grandes corporações e indivíduos de alto risco.</p>
+                        <button class="button-index" onclick="showPackages('operacao-omega-packages')">VER PACOTES</button>
+                    </div>
+                </div>
+                <div class="plans-nao-encontrou">
                     <div class="nao-encontrou">
-                        <button class="button-nao-encontrou">FALE CONOSCO</button>
+                        <button class="button-nao-encontrou" onclick="window.location.href='https://wa.me/5511999999999'">FALE CONOSCO</button>
                         <p>Chame-nos no WhatsApp e faremos uma investigação personalizada para você!</p>
                     </div>
+                </div>
+            </div>
+
+            <!-- ---------- SEÇÃO DE PACOTES ---------- -->
+             <!--investigacao-golpes-packages // investigacao-antecedentes-packages // investigacao-empresarial-packages // rastreamento-pessoas-packages // investigacao-identidade-packages // investigacao-pessoal-packages investigacao-avancada-packages // operação-omega-packages-->
+            <div id="investigacao-conjugal-packages" class="package-section">
+                <button class="close-button" onclick="hidePackages('investigacao-conjugal-packages')"><img src="images/icons/close.png" alt="Fechar" class="feature-icon">Fechar</button>
+                <h3>Pacotes para Investigação Conjugal</h3>
+                <div class="package-container">
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-private-pv2-64.png" alt="Básico" class="package-icon"> Pacote Básico</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Análise de Número de Telefone</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Mensagens Suspeitas</p>
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-corporal-cpl-64.png" alt="Intermediário" class="package-icon">Pacote Intermediário</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Análise de Número de Telefone</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon">Mensagens suspeitas</p>                        
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-sergeant-sgt-64.png" alt="Avançado" class="package-icon">Pacote Avançado</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de Número de telefone</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Mensagens Suspeitas</p>
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-military-medal-96.png" alt="Premium" class="package-icon">Pacote Premium</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de Número de telefone</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Mensagens suspeitas</p>
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="nao-encontrou">
+                        <button class="button-nao-encontrou" onclick="window.location.href='https://wa.me/5511999999999'">FALE CONOSCO</button>
+                        <p>Chame-nos no WhatsApp e faremos uma investigação personalizada para você!</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="investigacao-golpes-packages" class="package-section">
+                <button class="close-button" onclick="hidePackages('investigacao-golpes-packages')"><img src="images/icons/close.png" alt="Fechar" class="feature-icon">Fechar</button>
+                <h3>Pacotes para Investigação de Golpes e Fraudes</h3>
+                <div class="package-container">
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-private-pv2-64.png" alt="Básico" class="package-icon"> Pacote Básico</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Análise de Número de telefone</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Mensagens suspeitas</p>
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-corporal-cpl-64.png" alt="Intermediário" class="package-icon">Pacote Intermediário</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Análise de Número de Telefone</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon">Mensagens suspeitas</p>                        
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-sergeant-sgt-64.png" alt="Avançado" class="package-icon">Pacote Avançado</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de Número de telefone</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Mensagens Suspeitas</p>
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-military-medal-96.png" alt="Premium" class="package-icon">Pacote Premium</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de Número de telefone</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Mensagens Suspeitas</p>
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="nao-encontrou">
+                        <button class="button-nao-encontrou" onclick="window.location.href='https://wa.me/5511999999999'">FALE CONOSCO</button>
+                        <p>Chame-nos no WhatsApp e faremos uma investigação personalizada para você!</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="investigacao-antecedentes-packages" class="package-section">
+                <button class="close-button" onclick="hidePackages('investigacao-antecedentes-packages')"><img src="images/icons/close.png" alt="Fechar" class="feature-icon">Fechar</button>
+                <h3>Pacotes para Investigação de Antecedentes</h3>
+                <div class="package-container">
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-private-pv2-64.png" alt="Básico" class="package-icon"> Pacote Básico</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Análise de Número de telefone</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Mensagens suspeitas</p>
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-corporal-cpl-64.png" alt="Intermediário" class="package-icon">Pacote Intermediário</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Análise de Número de telefone</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon">Mensagens suspeitas</p>                        
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-sergeant-sgt-64.png" alt="Avançado" class="package-icon">Pacote Avançado</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de Número de telefone</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Mensagens Suspeitas</p>
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-military-medal-96.png" alt="Premium" class="package-icon">Pacote Premium</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de Número de Telefone</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Mensagens Suspeitas</p>
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="nao-encontrou">
+                        <button class="button-nao-encontrou" onclick="window.location.href='https://wa.me/5511999999999'">FALE CONOSCO</button>
+                        <p>Chame-nos no WhatsApp e faremos uma investigação personalizada para você!</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="investigacao-empresarial-packages" class="package-section">
+                <button class="close-button" onclick="hidePackages('investigacao-empresarial-packages')"><img src="images/icons/close.png" alt="Fechar" class="feature-icon">Fechar</button>
+                <h3>Pacotes para Investigação Empresarial</h3>
+                <div class="package-container">
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-private-pv2-64.png" alt="Básico" class="package-icon"> Pacote Básico</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Análise de Número de Telefone</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Mensagens Suspeitas</p>
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-corporal-cpl-64.png" alt="Intermediário" class="package-icon">Pacote Intermediário</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Análise de Número de Telefone</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon">Mensagens Suspeitas</p>                        
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-sergeant-sgt-64.png" alt="Avançado" class="package-icon">Pacote Avançado</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de Número de Telefone</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Mensagens Suspeitas</p>
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-military-medal-96.png" alt="Premium" class="package-icon">Pacote Premium</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de Número de Telefone</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Mensagens Suspeitas</p>
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="nao-encontrou">
+                        <button class="button-nao-encontrou" onclick="window.location.href='https://wa.me/5511999999999'">FALE CONOSCO</button>
+                        <p>Chame-nos no WhatsApp e faremos uma investigação personalizada para você!</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="rastreamento-pessoas-packages" class="package-section">
+                <button class="close-button" onclick="hidePackages('rastreamento-pessoas-packages')"><img src="images/icons/close.png" alt="Fechar" class="feature-icon">Fechar</button>
+                <h3>Pacotes para Rastreamento de Pessoas</h3>
+                <div class="package-container">
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-private-pv2-64.png" alt="Básico" class="package-icon"> Pacote Básico</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Análise de Número de Telefone</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Mensagens Suspeitas</p>
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-corporal-cpl-64.png" alt="Intermediário" class="package-icon">Pacote Intermediário</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Análise de Número de Telefone</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon">Mensagens Suspeitas</p>                        
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-sergeant-sgt-64.png" alt="Avançado" class="package-icon">Pacote Avançado</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de Número de Telefone</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Mensagens Suspeitas</p>
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-military-medal-96.png" alt="Premium" class="package-icon">Pacote Premium</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de Número de Telefone</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Mensagens Suspeitas</p>
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="nao-encontrou">
+                        <button class="button-nao-encontrou" onclick="window.location.href='https://wa.me/5511999999999'">FALE CONOSCO</button>
+                        <p>Chame-nos no WhatsApp e faremos uma investigação personalizada para você!</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="investigacao-identidade-packages" class="package-section">
+                <button class="close-button" onclick="hidePackages('investigacao-identidade-packages')"><img src="images/icons/close.png" alt="Fechar" class="feature-icon">Fechar</button>
+                <h3>Pacotes para Investigação de Veracidade Social</h3>
+                <div class="package-container">
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-private-pv2-64.png" alt="Básico" class="package-icon"> Pacote Básico</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Análise de Número de Telefone</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Mensagens Suspeitas</p>
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-corporal-cpl-64.png" alt="Intermediário" class="package-icon">Pacote Intermediário</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Análise de Número de Telefone</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon">Mensagens Suspeitas</p>                        
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-sergeant-sgt-64.png" alt="Avançado" class="package-icon">Pacote Avançado</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de Número de Telefone</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Mensagens Suspeitas</p>
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-military-medal-96.png" alt="Premium" class="package-icon">Pacote Premium</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de Número de Telefone</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Mensagens Suspeitas</p>
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="nao-encontrou">
+                        <button class="button-nao-encontrou" onclick="window.location.href='https://wa.me/5511999999999'">FALE CONOSCO</button>
+                        <p>Chame-nos no WhatsApp e faremos uma investigação personalizada para você!</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="investigacao-pessoal-packages" class="package-section">
+                <button class="close-button" onclick="hidePackages('investigacao-conjugal-packages')"><img src="images/icons/close.png" alt="Fechar" class="feature-icon">Fechar</button>
+                <h3>Pacotes para Investigação Pessoal</h3>
+                <div class="package-container">
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-private-pv2-64.png" alt="Básico" class="package-icon"> Pacote Básico</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Análise de Número de Telefone</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Mensagens Suspeitas</p>
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-corporal-cpl-64.png" alt="Intermediário" class="package-icon">Pacote Intermediário</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Análise de Número de Telefone</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon">Mensagens Suspeitas</p>                        
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-sergeant-sgt-64.png" alt="Avançado" class="package-icon">Pacote Avançado</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de Número de Telefone</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Mensagens Suspeitas</p>
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-military-medal-96.png" alt="Premium" class="package-icon">Pacote Premium</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de Número de Telefone</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Mensagens Suspeitas</p>
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="nao-encontrou">
+                        <button class="button-nao-encontrou" onclick="window.location.href='https://wa.me/5511999999999'">FALE CONOSCO</button>
+                        <p>Chame-nos no WhatsApp e faremos uma investigação personalizada para você!</p>
+                    </div>
+
+                </div>
+            </div>
+            
+            <div id="investigacao-avancada-packages" class="package-section">
+                <button class="close-button" onclick="hidePackages('investigacao-conjugal-packages')"><img src="images/icons/close.png" alt="Fechar" class="feature-icon">Fechar</button>
+                <h3>Pacotes para Investigação Avançada</h3>
+                <div class="package-container">
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-private-pv2-64.png" alt="Básico" class="package-icon"> Pacote Básico</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Análise de Número de Telefone</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Mensagens Suspeitas</p>
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-corporal-cpl-64.png" alt="Intermediário" class="package-icon">Pacote Intermediário</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Análise de Número de Telefone</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon">Mensagens Suspeitas</p>                        
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-sergeant-sgt-64.png" alt="Avançado" class="package-icon">Pacote Avançado</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de Número de Telefone</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Mensagens Suspeitas</p>
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-military-medal-96.png" alt="Premium" class="package-icon">Pacote Premium</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de Número de Telefone</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Mensagens Suspeitas</p>
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="nao-encontrou">
+                        <button class="button-nao-encontrou" onclick="window.location.href='https://wa.me/5511999999999'">FALE CONOSCO</button>
+                        <p>Chame-nos no WhatsApp e faremos uma investigação personalizada para você!</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="operacao-omega-packages" class="package-section">
+                <button class="close-button" onclick="hidePackages('operacao-omega-packages')"><img src="images/icons/close.png" alt="Fechar" class="feature-icon">Fechar</button>
+                <h3>Pacotes para Operação Shelock</h3>
+                <div class="package-container">
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-private-pv2-64.png" alt="Básico" class="package-icon"> Pacote Básico</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Análise de Número de Telefone</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Mensagens Suspeitas</p>
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-corporal-cpl-64.png" alt="Intermediário" class="package-icon">Pacote Intermediário</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Análise de Número de Telefone</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon">Mensagens Suspeitas</p>                        
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-sergeant-sgt-64.png" alt="Avançado" class="package-icon">Pacote Avançado</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de Número de Telefone</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Mensagens Suspeitas</p>
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-military-medal-96.png" alt="Premium" class="package-icon">Pacote Premium</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de Número de Telefone</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Mensagens Suspeitas</p>
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="nao-encontrou">
+                        <button class="button-nao-encontrou" onclick="window.location.href='https://wa.me/5511999999999'">FALE CONOSCO</button>
+                        <p>Chame-nos no WhatsApp e faremos uma investigação personalizada para você!</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="plans">
+            <h2 class="highlighted-title">OPERAÇÕES DE HACKING ÉTICO</h2>
+            <div class="plan-content">    
+                <div class="plan-container">
+                    <div class="plan">
+                        <img src="images/icons/icons8-hacker-100.png" alt="Investigação Conjugal" class="plan-icon">
+                        <h3>TESTE DE PENETRAÇÃO (PENTEST)</h3>
+                        <p>Simulamos ataques reais para identificar falhas em redes, aplicações web, APIs e sistemas. Utilizamos técnicas avançadas para testar a segurança da sua infraestrutura e recomendar correções eficazes.
+                        </p>
+                        <button class="button-index" onclick="showPackages('pentest-packages')">VER PACOTES</button>
+                    </div>
+                    <div class="plan">
+                        <img src="images/icons/icons8-shield-64.png" alt="Investigação de Golpes e Fraudes" class="plan-icon">
+                        <h3>ANÁLISE DE VULNERAILIDADES</h3>
+                        <p>Realizamos um escaneamento profundo em seus sistemas para identificar pontos fracos exploráveis, categorizando os riscos e fornecendo soluções para mitigação.
+                        </p>
+                        <button class="button-index" onclick="showPackages('vulnerabilidades-packages')">VER PACOTES</button>
+                    </div>
+                    <div class="plan">
+                        <img src="images/icons/icons8-web-100.png" alt="Investigação de Antecedentes" class="plan-icon">
+                        <h3>SEGURANÇA EM APLICAÇÕES WEB</h3>
+                        <p>Testamos aplicações web em busca de falhas como injeção de código, falhas de autenticação, vazamento de dados e más configurações de segurança.</p>
+                        <button class="button-index" onclick="showPackages('aplicacao-web-packages')">VER PACOTES</button>
+                    </div>
+                    <div class="plan">
+                        <img src="images/icons/icons8-password-96 (1).png" alt="Investigação de Antecedentes" class="plan-icon">
+                        <h3>FORTALECIMENTO DE SENHAS</h3>
+                        <p>-----A PREENCHER-----</p>
+                        <button class="button-index" onclick="showPackages('senhas-packages')">VER PACOTES</button>
+                    </div>
+                    <div class="plan">
+                        <img src="images/icons/icons8-security-camera-64.png" alt="Investigação de Antecedentes" class="plan-icon">
+                        <h3>SEGURANÇA EM SISTEMAS DE VÍDEO-MONITORAMENTO</h3>
+                        <p>-----A PREENCHER-----</p>
+                        <button class="button-index" onclick="showPackages('video-monitoramento-packages')">VER PACOTES</button>
+                    </div>
+                    <div class="plan">
+                        <img src="images/icons/icons8-fsociety-mask-100.png" alt="Investigação de Antecedentes" class="plan-icon">
+                        <h3>OPERAÇÃO MR. ROBOT</h3>
+                        <p>-----A PREENCHER-----</p>
+                        <button class="button-index" onclick="showPackages('operacao-mr-robot-packages')">VER PACOTES</button>
+                    </div>
+                </div>
+                <div class="plans-nao-encontrou">
+                    <div class="nao-encontrou">
+                        <button class="button-nao-encontrou" onclick="window.location.href='https://wa.me/5511999999999'">FALE CONOSCO</button>
+                        <p>Chame-nos no WhatsApp e faremos uma investigação personalizada para você!</p>
+                    </div>
+                </div>
+            </div>
+                        <!-- ---------- SEÇÃO DE PACOTES ---------- -->
+             <!--investigacao-golpes-packages // investigacao-antecedentes-packages // investigacao-empresarial-packages // rastreamento-pessoas-packages // investigacao-identidade-packages // investigacao-pessoal-packages investigacao-avancada-packages // operação-omega-packages-->
+             <div id="pentest-packages" class="package-section">
+                <button class="close-button" onclick="hidePackages('pentest-packages')"><img src="images/icons/close.png" alt="Fechar" class="feature-icon">Fechar</button>
+                <h3>Pacotes para Investigação Conjugal</h3>
+                <div class="package-container">
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-private-pv2-64.png" alt="Básico" class="package-icon"> Pacote Básico</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Análise de Número de Telefone</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Mensagens Suspeitas</p>
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-corporal-cpl-64.png" alt="Intermediário" class="package-icon">Pacote Intermediário</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Análise de Número de Telefone</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon">Mensagens suspeitas</p>                        
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-sergeant-sgt-64.png" alt="Avançado" class="package-icon">Pacote Avançado</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de Número de telefone</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Mensagens Suspeitas</p>
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-military-medal-96.png" alt="Premium" class="package-icon">Pacote Premium</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de Número de telefone</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Mensagens suspeitas</p>
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="nao-encontrou">
+                        <button class="button-nao-encontrou" onclick="window.location.href='https://wa.me/5511999999999'">FALE CONOSCO</button>
+                        <p>Chame-nos no WhatsApp e faremos uma investigação personalizada para você!</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="vulnerabilidades-packages" class="package-section">
+                <button class="close-button" onclick="hidePackages('vulnerabilidades-packages')"><img src="images/icons/close.png" alt="Fechar" class="feature-icon">Fechar</button>
+                <h3>Pacotes para Investigação de Golpes e Fraudes</h3>
+                <div class="package-container">
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-private-pv2-64.png" alt="Básico" class="package-icon"> Pacote Básico</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Análise de Número de telefone</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Mensagens suspeitas</p>
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-corporal-cpl-64.png" alt="Intermediário" class="package-icon">Pacote Intermediário</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Análise de Número de Telefone</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon">Mensagens suspeitas</p>                        
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-sergeant-sgt-64.png" alt="Avançado" class="package-icon">Pacote Avançado</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de Número de telefone</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Mensagens Suspeitas</p>
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-military-medal-96.png" alt="Premium" class="package-icon">Pacote Premium</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de Número de telefone</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Mensagens Suspeitas</p>
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="nao-encontrou">
+                        <button class="button-nao-encontrou" onclick="window.location.href='https://wa.me/5511999999999'">FALE CONOSCO</button>
+                        <p>Chame-nos no WhatsApp e faremos uma investigação personalizada para você!</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="aplicacao-web-packages" class="package-section">
+                <button class="close-button" onclick="hidePackages('aplicacao-web-packages')"><img src="images/icons/close.png" alt="Fechar" class="feature-icon">Fechar</button>
+                <h3>Pacotes para Investigação de Antecedentes</h3>
+                <div class="package-container">
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-private-pv2-64.png" alt="Básico" class="package-icon"> Pacote Básico</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Análise de Número de telefone</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Mensagens suspeitas</p>
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-corporal-cpl-64.png" alt="Intermediário" class="package-icon">Pacote Intermediário</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Análise de Número de telefone</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon">Mensagens suspeitas</p>                        
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-sergeant-sgt-64.png" alt="Avançado" class="package-icon">Pacote Avançado</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de Número de telefone</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Mensagens Suspeitas</p>
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-military-medal-96.png" alt="Premium" class="package-icon">Pacote Premium</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de Número de Telefone</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Mensagens Suspeitas</p>
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="nao-encontrou">
+                        <button class="button-nao-encontrou" onclick="window.location.href='https://wa.me/5511999999999'">FALE CONOSCO</button>
+                        <p>Chame-nos no WhatsApp e faremos uma investigação personalizada para você!</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="senhas-packages" class="package-section">
+                <button class="close-button" onclick="hidePackages('senhas-packages')"><img src="images/icons/close.png" alt="Fechar" class="feature-icon">Fechar</button>
+                <h3>Pacotes para Investigação Empresarial</h3>
+                <div class="package-container">
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-private-pv2-64.png" alt="Básico" class="package-icon"> Pacote Básico</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Análise de Número de Telefone</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Mensagens Suspeitas</p>
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-corporal-cpl-64.png" alt="Intermediário" class="package-icon">Pacote Intermediário</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Análise de Número de Telefone</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon">Mensagens Suspeitas</p>                        
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-sergeant-sgt-64.png" alt="Avançado" class="package-icon">Pacote Avançado</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de Número de Telefone</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Mensagens Suspeitas</p>
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-military-medal-96.png" alt="Premium" class="package-icon">Pacote Premium</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de Número de Telefone</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Mensagens Suspeitas</p>
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="nao-encontrou">
+                        <button class="button-nao-encontrou" onclick="window.location.href='https://wa.me/5511999999999'">FALE CONOSCO</button>
+                        <p>Chame-nos no WhatsApp e faremos uma investigação personalizada para você!</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="video-monitoramento-packages" class="package-section">
+                <button class="close-button" onclick="hidePackages('video-monitoramento-packages')"><img src="images/icons/close.png" alt="Fechar" class="feature-icon">Fechar</button>
+                <h3>Pacotes para Rastreamento de Pessoas</h3>
+                <div class="package-container">
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-private-pv2-64.png" alt="Básico" class="package-icon"> Pacote Básico</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Análise de Número de Telefone</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Mensagens Suspeitas</p>
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-corporal-cpl-64.png" alt="Intermediário" class="package-icon">Pacote Intermediário</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Análise de Número de Telefone</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon">Mensagens Suspeitas</p>                        
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-sergeant-sgt-64.png" alt="Avançado" class="package-icon">Pacote Avançado</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de Número de Telefone</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Mensagens Suspeitas</p>
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-military-medal-96.png" alt="Premium" class="package-icon">Pacote Premium</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de Número de Telefone</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Mensagens Suspeitas</p>
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="nao-encontrou">
+                        <button class="button-nao-encontrou" onclick="window.location.href='https://wa.me/5511999999999'">FALE CONOSCO</button>
+                        <p>Chame-nos no WhatsApp e faremos uma investigação personalizada para você!</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="operacao-mr-robot-packages" class="package-section">
+                <button class="close-button" onclick="hidePackages('operacao-mr-robot-packages')"><img src="images/icons/close.png" alt="Fechar" class="feature-icon">Fechar</button>
+                <h3>Pacotes para Investigação de Veracidade Social</h3>
+                <div class="package-container">
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-private-pv2-64.png" alt="Básico" class="package-icon"> Pacote Básico</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Análise de Número de Telefone</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Mensagens Suspeitas</p>
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-corporal-cpl-64.png" alt="Intermediário" class="package-icon">Pacote Intermediário</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Análise de Número de Telefone</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon">Mensagens Suspeitas</p>                        
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-sergeant-sgt-64.png" alt="Avançado" class="package-icon">Pacote Avançado</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de Número de Telefone</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Mensagens Suspeitas</p>
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-military-medal-96.png" alt="Premium" class="package-icon">Pacote Premium</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de Número de Telefone</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Mensagens Suspeitas</p>
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="nao-encontrou">
+                        <button class="button-nao-encontrou" onclick="window.location.href='https://wa.me/5511999999999'">FALE CONOSCO</button>
+                        <p>Chame-nos no WhatsApp e faremos uma investigação personalizada para você!</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="investigacao-pessoal-packages" class="package-section">
+                <button class="close-button" onclick="hidePackages('investigacao-conjugal-packages')"><img src="images/icons/close.png" alt="Fechar" class="feature-icon">Fechar</button>
+                <h3>Pacotes para Investigação Pessoal</h3>
+                <div class="package-container">
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-private-pv2-64.png" alt="Básico" class="package-icon"> Pacote Básico</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Análise de Número de Telefone</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Mensagens Suspeitas</p>
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-corporal-cpl-64.png" alt="Intermediário" class="package-icon">Pacote Intermediário</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Análise de Número de Telefone</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon">Mensagens Suspeitas</p>                        
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-sergeant-sgt-64.png" alt="Avançado" class="package-icon">Pacote Avançado</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de Número de Telefone</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Mensagens Suspeitas</p>
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-military-medal-96.png" alt="Premium" class="package-icon">Pacote Premium</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de Número de Telefone</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Mensagens Suspeitas</p>
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="nao-encontrou">
+                        <button class="button-nao-encontrou" onclick="window.location.href='https://wa.me/5511999999999'">FALE CONOSCO</button>
+                        <p>Chame-nos no WhatsApp e faremos uma investigação personalizada para você!</p>
+                    </div>
+
+                </div>
+            </div>
+            
+            <div id="investigacao-avancada-packages" class="package-section">
+                <button class="close-button" onclick="hidePackages('investigacao-conjugal-packages')"><img src="images/icons/close.png" alt="Fechar" class="feature-icon">Fechar</button>
+                <h3>Pacotes para Investigação Avançada</h3>
+                <div class="package-container">
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-private-pv2-64.png" alt="Básico" class="package-icon"> Pacote Básico</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Análise de Número de Telefone</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Mensagens Suspeitas</p>
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-corporal-cpl-64.png" alt="Intermediário" class="package-icon">Pacote Intermediário</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Análise de Número de Telefone</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon">Mensagens Suspeitas</p>                        
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-sergeant-sgt-64.png" alt="Avançado" class="package-icon">Pacote Avançado</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de Número de Telefone</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Mensagens Suspeitas</p>
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-military-medal-96.png" alt="Premium" class="package-icon">Pacote Premium</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de Número de Telefone</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Mensagens Suspeitas</p>
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="nao-encontrou">
+                        <button class="button-nao-encontrou" onclick="window.location.href='https://wa.me/5511999999999'">FALE CONOSCO</button>
+                        <p>Chame-nos no WhatsApp e faremos uma investigação personalizada para você!</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="operacao-omega-packages" class="package-section">
+                <button class="close-button" onclick="hidePackages('operacao-omega-packages')"><img src="images/icons/close.png" alt="Fechar" class="feature-icon">Fechar</button>
+                <h3>Pacotes para Operação Shelock</h3>
+                <div class="package-container">
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-private-pv2-64.png" alt="Básico" class="package-icon"> Pacote Básico</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Análise de Número de Telefone</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Mensagens Suspeitas</p>
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-corporal-cpl-64.png" alt="Intermediário" class="package-icon">Pacote Intermediário</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Análise de Número de Telefone</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon">Mensagens Suspeitas</p>                        
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-sergeant-sgt-64.png" alt="Avançado" class="package-icon">Pacote Avançado</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de Número de Telefone</p>
+                            <p><img src="images/icons/icons8-close-96.png" alt="Check" class="feature-icon-rejected">Mensagens Suspeitas</p>
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="package">
+                        <h4><img src="images/icons/icons8-military-medal-96.png" alt="Premium" class="package-icon">Pacote Premium</h4>
+                        <ul>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de redes sociais</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Relatório em PDF</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Provas documentadas</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de E-mail</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Análise de Número de Telefone</p>
+                            <p><img src="images/icons/icons8-check-96.png" alt="Check" class="feature-icon">Mensagens Suspeitas</p>
+                        </ul>
+                        <div class="price">
+                            <button class="button-price">R$ 00,00</button>
+                        </div>
+                        <div>
+                            <button class="button-whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                    <div class="nao-encontrou">
+                        <button class="button-nao-encontrou" onclick="window.location.href='https://wa.me/5511999999999'">FALE CONOSCO</button>
+                        <p>Chame-nos no WhatsApp e faremos uma investigação personalizada para você!</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="plans">
+            <h2 class="highlighted-title">OPERAÇÕES DE ENGENHARIA SOCIAL</h2>
+            <div class="plan-content">    
+                <div class="plan-container">
+                    <div class="plan">
+                        <img src="images/icons/question-sign.png" alt="Investigação Conjugal" class="plan-icon">
+                        <h3>SIMULAÇÃO DE PhISHING</h3>
+                        <p>-----A PREENCHER-----</p>
+                        <button class="button-index" onclick="showPackages('investigacao-conjugal-packages')">VER PACOTES</button>
+                    </div>
+                    <div class="plan">
+                        <img src="images/icons/question-sign.png" alt="Investigação de Golpes e Fraudes" class="plan-icon">
+                        <h3>VISHING E PRETEXTING</h3>
+                        <p>-----A PREENCHER-----</p>
+                        <button class="button-index" onclick="showPackages('investigacao-golpes-packages')">VER PACOTES</button>
+                    </div>
+                    <div class="plan">
+                        <img src="images/icons/question-sign.png" alt="Investigação de Antecedentes" class="plan-icon">
+                        <h3>TESTE DE PERSUASÃO</h3>
+                        <p>-----A PREENCHER-----</p>
+                        <button class="button-index" onclick="showPackages('investigacao-antecedentes-packages')">VER PACOTES</button>
+                    </div>
+                </div>
+                <div class="plans-nao-encontrou">
+                    <div class="nao-encontrou">
+                        <button class="button-nao-encontrou" onclick="window.location.href='https://wa.me/5511999999999'">FALE CONOSCO</button>
+                        <p>Chame-nos no WhatsApp e faremos uma investigação personalizada para você!</p>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -110,17 +1700,13 @@
                         <blockquote>MEU DEPOIMENTO</blockquote>
                     </div>
                 </div>
-                    <div class="nao-encontrou">
-                        <button class="button-nao-encontrou">FALE CONOSCO</button>
-                        <p>Chame-nos no WhatsApp e faremos uma investigação personalizada para você!</p>
-                    </div>
             </div>
         </section>
 
         <section class="cta">
-            <h2 class="highlighted-title-end">Entre em Contato</h2>
+            <h3 class="highlighted-title-end">ENTRE EM CONTATO</h3>
             <div class="nao-encontrou">
-                <button class="button-nao-encontrou">FALE CONOSCO</button>
+                <button class="button-nao-encontrou" onclick="window.location.href='https://wa.me/5511999999999'">FALE CONOSCO</button>
                 <p>Chame-nos no WhatsApp e faremos uma investigação personalizada para você!</p>
             </div>
         </section>
@@ -133,32 +1719,69 @@
                 <li><a href="sobre.html">Sobre</a></li>
             </ul>
         </nav>
-        <p>&copy; 2025 Black Raven Sec. Todos os direitos reservados.</p>
+
+        <p class="direitos-reservados">&copy; 2025 Black Raven Sec. Todos os direitos reservados.</p>
+
         <div>
-            <img src="images/icons/whatsapp.png" class="social_media-icons-footer" alt="WhatsApp">
-            <img src="images/icons/instagram.png" class="social_media-icons-footer" alt="Instagram">
- </div>
+            <img src="images/icons/icons8-whatsapp-100.png" class="social_media-icons-footer" alt="WhatsApp">
+            <img src="images/icons/icons8-instagram-100.png" class="social_media-icons-footer" alt="Instagram">
+        </div>
+
     </footer>
 
     <script>
-        document.getElementById('toggle-theme').addEventListener('click', function() {
-            const body = document.body;
-            const header = document.querySelector('header');
-            const themeIcon = this.querySelector('.theme-icon');
+        let previousScrollPosition = 0; // Variável para armazenar a posição anterior
 
-            // Alterna a classe 'dark-theme'
-            body.classList.toggle('dark-theme');
-            header.classList.toggle('dark-theme');
+        function showPackages(packageId) {
+            // Armazena a posição de rolagem atual
+            previousScrollPosition = window.scrollY;
 
-            // Altera o texto e o ícone do botão
-            if (body.classList.contains('dark-theme')) {
-                this.querySelector('.theme-icon').src = 'images/icons/moon-light.png'; // Ícone de sol para modo claro
-                this.textContent = ' Modo Light'; // Muda o texto do botão
-            } else {
-                this.querySelector('.theme-icon').src = 'images/icons/moon-dark.png'; // Ícone de lua para modo escuro
-                this.textContent = ' Modo Dark'; // Muda o texto do botão
+            // Esconde todas as seções de pacotes
+            const sections = document.querySelectorAll('.package-section');
+            sections.forEach(section => {
+                section.style.display = 'none';
+            });
+
+            // Mostra a seção de pacotes correspondente
+            const packageSection = document.getElementById(packageId);
+            if (packageSection) {
+                packageSection.style.display = 'block';
+
+                // Calcula a posição da seção de pacotes
+                const sectionPosition = packageSection.getBoundingClientRect().top + window.scrollY;
+
+                // Rolagem suave até a seção de pacotes
+                window.scrollTo({ top: sectionPosition, behavior: 'smooth' });
             }
-        });
+        }
+        
+        function hidePackages(packageId) {
+    const packageSection = document.getElementById(packageId);
+    if (packageSection) {
+        packageSection.style.display = 'none';
+        window.scrollTo({ top: previousScrollPosition, behavior: 'smooth' }); // Rolagem suave de volta à posição anterior
+            }
+        }
+
+        document.getElementById('toggle-theme').addEventListener('click', function() {
+    const body = document.body;
+    const header = document.querySelector('header');
+    const themeIcon = this.querySelector('.theme-icon');
+
+    // Alterna a classe 'dark-theme'
+    body.classList.toggle('dark-theme');
+    header.classList.toggle('dark-theme');
+
+    // Altera o texto e o ícone do botão
+    if (body.classList.contains('dark-theme')) {
+        this.querySelector('.theme-icon'); // Ícone de sol para modo claro
+        this.textContent = ' Modo Light'; // Muda o texto do botão
+    } else {
+        this.querySelector('.theme-icon'); // Ícone de lua para modo escuro
+        this.textContent = ' Modo Dark'; // Muda o texto do botão
+    }
+});
     </script>
+    
 </body>
 </html>
