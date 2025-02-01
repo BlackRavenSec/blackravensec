@@ -128,6 +128,7 @@
 
 .button-inicio:hover {
     background-color: var(--cor-hover);
+    cursor: pointer;
 }
 
 .close-button {
@@ -145,6 +146,7 @@
 .close-button:hover {
     background-color: black;
     color: #ffffff;
+    cursor: pointer;
 }
 
 .button-escolher-operacoes {
@@ -173,6 +175,7 @@
 .duvidas-button-index:hover {
     background-color: #005ea1;
     color: #ffffff;
+    cursor: pointer;
 }
 
 .voltar-button-index {
@@ -191,6 +194,7 @@
 .voltar-button-index:hover {
     background-color: var(--cor-septuária);
     color: #ffffff;
+    cursor: pointer;
 }
 
 .duvidas-button {
@@ -208,6 +212,7 @@
 .duvidas-button:hover {
     background-color: #000000; /* Cor do botão de fechar */
     color: #ffffff;
+    cursor: pointer;
 }
 
 .button-price {
@@ -238,6 +243,7 @@
     background-color: var(--cor-secundaria);
     color: var(--cor-quintuanária);
     border: 0.0625rem solid var(--cor-quintuanária); /* 1px */
+    cursor: pointer;
 }
 
 .buttons-options-plans {
