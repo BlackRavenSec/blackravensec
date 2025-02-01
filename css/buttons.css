@@ -110,6 +110,7 @@
 .button-index:hover {
     background-color: black;
     color: white;
+    cursor: pointer;
     }
 
 .button-inicio {
