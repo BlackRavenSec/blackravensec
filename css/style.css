@@ -90,9 +90,10 @@ header {
 
 /* === Imagens e Ícones === */
 .banner-1 {
-    width: 50%;
+    width: 60%;
     height: auto;
-    margin: 1.25rem 7%; /* 20px */
+    margin: 0 7%; /* 20px */
+    margin-top: 1rem;
 }
 
 .direitos-reservados {
@@ -141,21 +142,61 @@ header {
     color: #fff;
     border: none;
     border-radius: 0.9375rem; /* 15px */
-    padding: 0.625rem 1.25rem; /* 10px e 20px em rem*/
+    padding: 0.625rem 0.3125rem; /* 10px 5px */
+    padding-right: 1rem;
     font-size: 1rem; /* 16px */
     margin: 0 0.625rem; /* 10px */
     transition: background-color 0.3s;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-index img {
+    margin-left: 0.5rem; /* Espaço entre o texto e o ícone */
+    width: 1.0625rem; /* 17px */
+    height: auto; /* Ajuste o tamanho do ícone conforme necessário */
+    margin-bottom: -0.2rem;
+    margin-right: 0.5rem;
 }
 
 .button-index:hover {
-    background-color: #ffffff;
-    color: #940101;
-    border: 0.125rem solid #940101; /* 2px */
+    background-color: #c80000;
+    color: #ffffff;
+}
+
+.button-inicio {
+    background-color: #940101;
+    color: #fff;
+    border: none;
+    border-radius: 0.9375rem; /* 15px */
+    padding: 0.625rem 0.3125rem; /* 10px 5px */
+    padding-right: 1rem;
+    font-size: 1rem; /* 16px */
+    margin: 0 0.625rem; /* 10px */
+    transition: background-color 0.3s;
+    align-items: center;
+    justify-content: center;
+    width: 96%;
+}
+
+.button-inicio img {
+    margin-left: 0.5rem; /* Espaço entre o texto e o ícone */
+    width: 1.0625rem; /* 17px */
+    height: auto; /* Ajuste o tamanho do ícone conforme necessário */
+    margin-bottom: -0.2rem;
+    margin-right: 0.5rem;
+}
+
+.button-inicio:hover {
+    background-color: #c80000;
+    cursor: pointer;
 }
 
 .button-nao-encontrou {
-    margin: 1.5625rem 0 -0.1875rem; /* 25px -3px */
-    width: 96%;
+    margin: 0 2rem 0 2rem; /* 25px -3px */
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    width: 87%;
     font-size: 1.125rem; /* 18px */
 }
 
@@ -166,14 +207,25 @@ header {
 }
 
 .option-button {
-    background-color: #ffffff;
-    color: #940101;
-    border: 2px solid #940101;
+    background-color: #333333;
+    color: #ffffff;
+    border: none;
     border-radius: 0.9375rem; /* 15px */
-    padding: 0.625rem 1.25rem; /* 10px e 20px em rem*/
+    padding: 0.625rem 6rem; /* 10px 5px */
     font-size: 1rem; /* 16px */
+    margin: 0 0.625rem; /* 10px */
     transition: background-color 0.3s;
+    align-items: center;
+    justify-content: center;
     width: 100%;
+}
+
+.option-button img {
+    margin-left: 0.5rem; /* Espaço entre o texto e o ícone */
+    width: 1.0625rem; /* 17px */
+    height: auto; /* Ajuste o tamanho do ícone conforme necessário */
+    margin-bottom: -0.2rem;
+    margin-right: 0.5rem;
 }
 
 .option-button:hover {
@@ -194,29 +246,87 @@ header {
 }
 
 .close-button {
-    background-color: #940101; /* Cor do botão de fechar */
+    background-color:#940101;
     color: #fff;
     border: none;
     border-radius: 0.9375rem; /* 15px */
-    padding: 0.625rem 0.3125rem; /* 10px 5px */
-    padding-right: 1.3125rem; /* 21px */
-    margin-top: 0.625rem; /* 10px */
-    display: flex; /* Adiciona flexbox */
-    align-items: center; /* Alinha verticalmente */
-    justify-items: auto;
-    cursor: pointer;
+    padding: 0.5rem 0.7rem; /* 10px e 20px em rem*/
+    font-size: 1rem; /* 16px */
+    margin: 0 0.625rem; /* 10px */
+    transition: background-color 0.3s;
+    text-transform: uppercase;
 }
 
 .close-button:hover {
     background-color: rgb(0, 0, 0);
     color: #ffffff;
+    cursor:pointer;
 }
 
-.close-button img {
+.duvidas-button-index {
+    background-color:#004e86;
+    color: #fff;
+    border: none;
+    border-radius: 0.9375rem; /* 15px */
+    padding: 0.625rem 1.25rem; /* 10px e 20px em rem*/
+    font-size: 1rem; /* 16px */
+    margin: 0 0.625rem 0.5rem; /* 10px */
+    transition: background-color 0.3s;
+    text-transform: uppercase;
+    width: 10rem;
+}
+
+.duvidas-button-index:hover {
+    background-color: #005ea1;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.voltar-button-index {
+    background-color:#3d3d3d;
+    color: #fff;
+    border: none;
+    border-radius: 0.9375rem; /* 15px */
+    padding: 0.610rem 1.25rem 0.625rem 0; /* 10px e 20px em rem*/
+    padding-left: 0.1rem;
+    font-size: 1rem; /* 16px */
+    margin: 0 0.625rem 0.5rem; /* 10px */
+    transition: background-color 0.3s;
+    text-transform: uppercase;
+    width: 10rem;
+}
+
+.voltar-button-index img {
     margin-left: 0.5rem; /* Espaço entre o texto e o ícone */
-    margin-bottom: -0.025rem; /* -0.4px */
     width: 1.0625rem; /* 17px */
     height: auto; /* Ajuste o tamanho do ícone conforme necessário */
+    margin-bottom: -0.2rem;
+    margin-right: 0.5rem;
+}
+
+.voltar-button-index:hover {
+    background-color: #5d5d5d;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+
+.duvidas-button {
+    background-color:#004e86;
+    color: #fff;
+    border: none;
+    border-radius: 0.9375rem; /* 15px */
+    padding: 0.1rem 0.7rem; /* 10px e 20px em rem*/
+    font-size: 1rem; /* 16px */
+    margin: 0 0.625rem; /* 10px */
+    transition: background-color 0.3s;
+    text-transform: uppercase;
+}
+
+.duvidas-button:hover {
+    background-color: #000000; /* Cor do botão de fechar */
+    color: #ffffff;
+    cursor: pointer;
 }
 
 .button-price {
@@ -319,7 +429,8 @@ nav ul {
     list-style: none;
     padding: 0;
     font-size: 0.8125rem; /* 13px */
-    margin: auto 0;
+    margin: 0 0;
+    align-items: center;
 }
 
 nav ul li {
@@ -408,6 +519,10 @@ h1, h2 {
 }
 
 .nao-encontrou {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza horizontalmente */
+    justify-content: center; /* Centraliza verticalmente */
     color: #000000; /* Cor do texto padrão */
     border: none; /* Remove borda desnecessária */
     border-radius: 0.5rem; /* Bordas arredondadas */
@@ -422,15 +537,24 @@ h1, h2 {
     display: none; /* Inicialmente escondido */
     background-color: #f9f9f9;
     padding: 1.25rem; /* 20px */
-    border: 1px solid #940101;
     border-radius: 0.5rem; /* 8px */
     margin: 1.25rem 1.25rem 0.625rem 0.625rem; /* 20px 20px 10px 10px */
     width: 96%;
 }
 
+.package-section-selected {
+    display: block; /* Exibe a seção selecionada */
+    margin-top: 3rem;
+}
+
 .package-section h3 {
     color: #000;
 }
+
+.header-packages {
+    display: flex;
+}
+
 
 .package-container {
     display: flex;
@@ -560,6 +684,69 @@ body.dark-theme .highlighted-title-black {
     background-color: #fff;
 }
 
+.buttons-options-plans {
+    display: flex;
+    flex-direction: column;
+}
+
+.operation {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Alinhamento lado a lado */
+    margin: 1.25rem 0; /* 20px */
+    width: 83%;
+}
+
+.operacao-selected {
+        box-shadow: 0 0.125rem 0.625rem #ffffff1a; /* Sombra leve */
+        background-color: #ffffff; /* Fundo claro para os planos */
+        border: 2px solid #940101; /* Borda leve */
+        border-radius: 0.5rem; /* Bordas arredondadas */
+        margin: 0.625rem; /* 10px */
+        padding: 1.25rem; /* 20px */
+        text-align: center;
+        color: black;
+        transition: transform 0.3s, box-shadow 0.3s; /* Transição suave */
+        width: 10%;
+}
+    
+.operacao-selected:hover {
+        transform: scale(1.03); /* Aumenta o tamanho ao passar o mouse */
+        box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.2); /* Sombra mais intensa */
+}
+
+.plan-selected {
+    box-shadow: 0 0.125rem 0.625rem #ffffff1a; /* Sombra leve */
+    background-color: #ffffff; /* Fundo claro para os planos */
+    border: 2px solid #940101; /* Borda leve */
+    border-radius: 0.5rem; /* Bordas arredondadas */
+    margin: 0.625rem; /* 10px */
+    padding: 1.25rem; /* 20px */
+    text-align: center;
+    color: black;
+    transition: transform 0.3s, box-shadow 0.3s; /* Transição suave */
+    width: 10%;
+}
+
+.plan-selected:hover {
+    transform: scale(1.03); /* Aumenta o tamanho ao passar o mouse */
+    box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.2); /* Sombra mais intensa */
+}
+
+.plan-content-selected {
+    box-shadow: 0 0.125rem 0.625rem #ffffff1a; /* Sombra leve */
+    background-color: #ffffff; /* Fundo claro para os planos */
+    border: 2px solid #940101; /* Borda leve */
+    border-radius: 0.5rem; /* Bordas arredondadas */
+    margin: 0.625rem; /* 10px */
+    padding: 1.25rem; /* 20px */
+    text-align: center;
+    color: black;
+    transition: transform 0.3s, box-shadow 0.3s; /* Transição suave */
+    width: 10%;
+}
+
 /* ========================= */
 /* ========================= */
 /* ========================= */
@@ -574,18 +761,35 @@ body.dark-theme .highlighted-title-black {
     .option-button {
         width: 100%; /* Botão ocupa toda a largura */
     }
+
+    .plan-selected {
+    }
+
+    .plan-content {
+        width: 90%;
+        align-items: center;
+        justify-content: center;
+        margin: 0 0 0 -0.4rem;
+    }
+
+    .options
+    .options-content
+    .options-container
+    .options
+    .option
 }
 
 /* Exemplo para telas entre 768px e 1024px */
 @media (min-width: 768px) and (max-width: 1024px) {
-    .plan, .feedback-user {
+    .plan, .plan-selected, .feedback-user {
         width: calc(50% - 1.25rem); /* Ajusta a largura para 50% */
     }
+
 }
 
 /* Exemplo para telas maiores que 1024px */
 @media (min-width: 1024px) {
-    .plan, .feedback-user {
+    .plan, .plan-selected, .feedback-user {
         width: calc(25% - 1.25rem); /* Ajusta a largura para 25% */
     }
 }
