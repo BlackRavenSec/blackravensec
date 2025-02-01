@@ -1,0 +1,38 @@
+/* === Estilos Gerais === */
+
+.feedback-content {
+    background-color: var(--cor-secundaria);
+}
+
+.feedback-users {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* Centraliza os planos */
+        width: 100%;
+}
+
+.feedback-user {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.1); /* Sombra leve */
+    border: 1px solid #ccc;
+    border-radius: 0.5rem; /* 8px */
+    margin: 1.25rem; /* 20px */
+    padding: 1.25rem; /* 20px */
+    text-align: center;
+    flex: 1 1 calc(33.33% - 20px); /* Ajusta a largura para 33.33% */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feedback-user p {
+    margin: 0.625rem 0; /* 10px */
+}
+
+.feedback-user h3 {
+    color: var(--cor-primaria);
+}
+
+.feedback-user:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.2); /* 4px 20px */
+}

@@ -1,0 +1,272 @@
+:root {
+    --cor-primaria: #940101;
+    --cor-secundaria: #ffffff;
+    --cor-terciária: #004e86;
+    --cor-quarternária: #333333;
+    --cor-quintuanária: #4CAF50;
+    --cor-sextuária: #3d3d3d;
+    --cor-septuária: #5d5d5d;
+    --cor-octuária: #006003;
+    --cor-hover: #c80000;
+}
+
+
+.button {
+    border: none;
+    border-radius: 0.9375rem; /* 15px */
+    padding: 0.625rem; /* 10px */
+    font-size: 1rem; /* 16px */
+    margin: 0 0.625rem; /* 10px */
+    transition: background-color 0.3s, transform 0.3s; /* Adicione transform aqui */
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer; /* Mover para a classe base */
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+.option-button, .button-nao-encontrou, .button-index {
+    background-color: #ffffff;
+    color: #940101;
+    border: 0.125rem solid #940101; /* 2px */
+    border-radius: 0.625rem; /* 10px */
+    padding: 0.75rem 0; /* cursor: pointer; */
+    cursor: pointer;
+}
+
+.button-nao-encontrou {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-primaria);
+    padding: 1rem 2rem;
+    font-size: 1.125rem; /* 18px */
+    width: auto; /* Ajusta a largura para auto */
+}
+
+.button-nao-encontrou:hover {
+    background-color: var(--cor-primaria);
+    color: white;
+    cursor: pointer;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.option-button {
+    background-color: #333333;
+    color: #ffffff;
+    border: none;
+    border-radius: 0.9375rem; /* 15px */
+    padding: 0.625rem 6rem; /* 10px 5px */
+    font-size: 1rem; /* 16px */
+    margin: 0 0.625rem; /* 10px */
+    transition: background-color 0.3s;
+    align-items: center;
+    justify-content: center;
+    width: 96%;
+}
+
+.option-button img {
+    margin-left: 0.5rem; /* Espaço entre o texto e o ícone */
+    width: 1.0625rem; /* 17px */
+    height: auto; /* Ajuste o tamanho do ícone conforme necessário */
+    margin-bottom: -0.2rem;
+    margin-right: 0.5rem;
+}
+
+.option-button:hover {
+    background-color: var(--cor-primaria);
+    color: #ffffff;
+    transition: transform 0.3s, box-shadow 0.3s;
+    transform: scale(1.01);
+    cursor: pointer;
+}
+
+.buttons-options-plans {
+    display: flex;
+    flex-direction: column;
+}
+
+.button-index {
+    background-color: var(--cor-primaria);
+    color: #fff;
+    border: none;
+    border-radius: 0.9375rem; /* 15px */
+    padding: 0.640rem 2rem 0.640rem 1.8rem; /* 10px 5px */
+    font-size: 1rem; /* 16px */
+    margin: 0 0.625rem; /* 10px */
+    transition: background-color 0.3s;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-index:hover {
+    background-color: black;
+    color: white;
+    }
+
+.button-inicio {
+    background-color: var(--cor-primaria);
+    color: #fff;
+    border: none;
+    border-radius: 0.9375rem; /* 15px */
+    padding: 0.625rem 0.3125rem; /* 10px 5px */
+    font-size: 1rem; /* 16px */
+    margin: 0 0.625rem; /* 10px */
+    transition: background-color 0.3s;
+    width: 96%;
+}
+
+
+.button-inicio:hover {
+    background-color: var(--cor-hover);
+}
+
+.close-button {
+    background-color: var(--cor-primaria);
+    color: #fff;
+    border: none;
+    border-radius: 0.9375rem; /* 15px */
+    padding: 0.5rem 0.7rem; /* 10px e 20px em rem*/
+    font-size: 1rem; /* 16px */
+    margin: 0 0.625rem; /* 10px */
+    transition: background-color 0.3s;
+    text-transform: uppercase;
+}
+
+.close-button:hover {
+    background-color: black;
+    color: #ffffff;
+}
+
+.button-escolher-operacoes {
+    background-color: black;
+    color: white; /* Altere de black para white */
+    padding: 0.625rem; /* 10px */
+    display: flex;
+    border: 0.0625rem solid var(--cor-primaria); /* 1px */
+    border-radius: 1.25rem; /* 20px */
+    margin: 0.625rem; /* 10px */
+}
+
+.duvidas-button-index {
+    background-color: var(--cor-terciária);
+    color: #fff;
+    border: none;
+    border-radius: 0.9375rem; /* 15px */
+    padding: 0.625rem 1.25rem; /* 10px e 20px em rem*/
+    font-size: 1rem; /* 16px */
+    margin: 0 0.625rem 0.5rem; /* 10px */
+    transition: background-color 0.3s;
+    text-transform: uppercase;
+    width: 10rem;
+}
+
+.duvidas-button-index:hover {
+    background-color: #005ea1;
+    color: #ffffff;
+}
+
+.voltar-button-index {
+    background-color: var(--cor-sextuária);
+    color: #fff;
+    border: none;
+    border-radius: 0.9375rem; /* 15px */
+    padding: 0.610rem 1.25rem 0.625rem 0; /* 10px e 20px em rem*/
+    font-size: 1rem; /* 16px */
+    margin: 0 0.625rem 0.5rem; /* 10px */
+    transition: background-color 0.3s;
+    text-transform: uppercase;
+    width: 10rem;
+}
+
+.voltar-button-index:hover {
+    background-color: var(--cor-septuária);
+    color: #ffffff;
+}
+
+.duvidas-button {
+    background-color: var(--cor-terciária);
+    color: #fff;
+    border: none;
+    border-radius: 0.9375rem; /* 15px */
+    padding: 0.1rem 0.7rem; /* 10px e 20px em rem*/
+    font-size: 1rem; /* 16px */
+    margin: 0 0.625rem; /* 10px */
+    transition: background-color 0.3s;
+    text-transform: uppercase;
+}
+
+.duvidas-button:hover {
+    background-color: #000000; /* Cor do botão de fechar */
+    color: #ffffff;
+}
+
+.button-price {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-octuária);
+    border: 0.0625rem solid var(--cor-octuária); /* 1px */
+    border-radius: 0.625rem; /* 10px */
+    padding: 0.3125rem 6.25rem; /* 5px 100px */
+    margin-top: 1.25rem; /* 20px */
+    margin-bottom: 1.25rem ; /* 20px */
+    font-size: 0.9375rem; /* 15px */
+    text-align: center;
+    align-items: center;
+}
+
+.button-whatsapp {
+    background-color: var(--cor-quintuanária);
+    color: #ffffff;
+    border: 0.0625rem #ffffff solid; /* 1px */
+    border-radius: 0.9375rem; /* 15px */
+    margin-top: 0.625rem; /* 10px */
+    padding: 0.625rem 6.25rem; /* 10px 100px */
+    font-size: 1.0625rem; /* 17px */
+    align-items: center;
+}
+
+.button-whatsapp:hover {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-quintuanária);
+    border: 0.0625rem solid var(--cor-quintuanária); /* 1px */
+}
+
+.buttons-options-plans {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/*MODO DARK*/
+.button.dark-theme:hover {
+    color: #000000;
+}
+
+.button.dark-theme {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-primaria);
+}
+
+
+
+/*ÍCONES BOTÕES*/
+.button-index img,
+.button-inicio img,
+.option-button img,
+.voltar-button-index img {
+    margin-left: 0.5rem; /* Espaço entre o texto e o ícone */
+    width: 1.0625rem; /* 17px */
+    height: auto; /* Ajuste o tamanho do ícone conforme necessário */
+    margin-bottom: -0.2rem;
+    margin-right: 0.5rem;
+}
+
+

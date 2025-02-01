@@ -1,0 +1,51 @@
+/* === Seção Options === */
+.options {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza os itens horizontalmente */
+    text-align: center; /* Centraliza o texto */    
+    justify-content: space-between; /* Alinhamento lado a lado */
+    margin: 1.25rem 0; /* 20px */
+}
+
+.options-content {
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+}
+
+.options-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centraliza os cartões */
+}
+
+.option {
+    background-color: #f9f9f9; /* Fundo claro para os planos */
+    color: black;
+    border: 1px solid #ccc; /* Borda leve */
+    border-radius: 0.5rem; /* Bordas arredondadas */
+    box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.1); /* Sombra leve */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza os itens horizontalmente */
+    text-align: center; /* Centraliza o texto */
+    margin: 1.25rem; /* 20px */
+    width: 30%; /* Ajusta a largura para 100% */
+    padding: 1.25rem; /* 20px */
+    transition: transform 0.3s, box-shadow 0.3s; /* Transição suave */
+    justify-content: center;
+}
+
+
+.option:hover {
+    transition: transform 0.3s, box-shadow 0.3s;
+    transform: scale(1.02);
+    box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.2);
+}
+
+.option-icon {
+    width: 50px; /* Tamanho fixo para os ícones */
+    height: auto; /* Mantém a proporção */
+    margin-bottom: 0.625rem; /* Espaçamento abaixo do ícone */
+}

@@ -1,0 +1,63 @@
+
+/* main.css */
+@import 'variables.css';
+@import 'reset.css';
+@import 'layout.css';
+@import 'header.css';
+@import 'footer.css';
+@import 'buttons.css';
+@import 'forms.css';
+@import 'media-queries.css';
+@import 'options.css';
+@import 'plans.css';
+@import 'feedback.css';
+@import 'package.css';
+@import 'opertion.css';
+@import 'operation.css';
+
+
+/* ========================= */
+/* ========================= */
+/* ========================= */
+/* ========================= */
+
+/* === Responsividade === */
+@media (max-width: 768px) {
+    .feedback-user {
+        width: 100%; /* Ajusta a largura para 100% em telas pequenas */
+    }
+}
+
+    .option-button {
+        width: 100%; /* Botão ocupa toda a largura */
+    }
+
+    .plan-content {
+        width: 90%;
+        align-items: center;
+        justify-content: center;
+        margin: 0 0 0 -0.4rem;
+    }
+
+    .options
+    .options-content
+    .options-container
+
+    .option {
+        width: 100%;
+}
+
+/* Exemplo para telas entre 768px e 1024px */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .plan, .plan-selected, .feedback-user {
+        width: calc(50% - 1.25rem); /* Ajusta a largura para 50% */
+    }
+
+}
+
+/* Exemplo para telas maiores que 1024px */
+@media (min-width: 1024px) {
+    .plan, .plan-selected, .feedback-user {
+        width: calc(25% - 1.25rem); /* Ajusta a largura para 25% */
+    }
+}
