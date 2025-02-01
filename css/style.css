@@ -519,8 +519,6 @@ h1, h2 {
 }
 
 .nao-encontrou {
-    display: flex;
-    flex-direction: column;
     align-items: center; /* Centraliza horizontalmente */
     justify-content: center; /* Centraliza verticalmente */
     color: #000000; /* Cor do texto padrão */
@@ -529,7 +527,7 @@ h1, h2 {
     margin: 0; /* Remove margens desnecessárias */
     padding: 1.25rem; /* Espaçamento interno */
     text-align: center; /* Centraliza o texto */
-    width: 96%;
+    width: 100%;
 }
 
 /* === Estilo para a seção de pacotes === */
