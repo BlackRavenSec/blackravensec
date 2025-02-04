@@ -327,7 +327,7 @@ button {
         flex: 1 1 calc(33.33% - 2rem); /* Ajusta a largura para 3 colunas em telas médias */
     }
     .package-card {
-        width: 90%;
+        width: 100%;
     }
 }
 
@@ -336,7 +336,7 @@ button {
         flex: 1 1 calc(50% - 2rem); /* Ajusta a largura para 2 colunas em telas menores */
     }
     .package-card {
-        width: 90%;
+        width: 100%;
     }
 }
 
@@ -345,7 +345,7 @@ button {
         flex: 1 1 100%; /* Ajusta a largura para 1 coluna em telas muito pequenas */
     }
     .package-card {
-        width: 90%;
+        width: 100%;
     }
 }
 
@@ -426,7 +426,7 @@ button {
         width: 100%;
     }
     .package-card {
-        width: 90%;
+        width: 100%;
     }
 }
 
