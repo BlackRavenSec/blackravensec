@@ -263,80 +263,6 @@ button {
     transition: background-color 0.3s; /* Added transition for hover effect */
 }
 
-@media (max-width: 768px) {
-    .buttons-options {
-        flex-direction: column; /* Alinha os botões em coluna em telas menores */
-        width: 100%; /* Faz com que os botões ocupem toda a largura */
-    }
-
-    .btn-option {
-        width: 100%; /* Faz com que os botões ocupem toda a largura */
-        padding: 1rem; /* Ajusta o padding para botões em tela pequena */
-    }
-
-    .service {
-        width: 100%; /* Faz com que os serviços ocupem toda a largura */
-    }
-
-    .operation {
-        width: 100%; /* Faz com que as operações ocupem toda a largura */
-    }
-
-    h2 {
-        font-size: 1.5rem; /* Ajusta o tamanho da fonte do título em telas menores */
-    }
-
-    h3 {
-        font-size: 1.25rem; /* Ajusta o tamanho da fonte do subtítulo em telas menores */
-        padding: 1rem;
-    }
-
-    header img {
-        width: 100%;
-        max-width: 15rem;
-    }
-    
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-    }
-    
-    .operations > div, .clients > div {
-        grid-template-columns: 1fr;
-    }
-    
-    .btn-nao-encontrou {
-        width: 100%;
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-    }
-    
-    footer ul {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .services {
-        width: 100%;
-    }
-    .service {
-        width: 100%;
-        align-items: center;
-        justify-content: center;
-    }
-    .operation {
-        width: 100%;
-    }
-
-    .button {
-        width: 100%;
-    }
-}
-
-Run
-Copy code
 .services {
     display: flex;
     flex-direction: column;
@@ -429,7 +355,80 @@ Copy code
     }
 }
 
+@media (max-width: 768px) {
+    .buttons-options {
+        flex-direction: column; /* Alinha os botões em coluna em telas menores */
+        width: 100%; /* Faz com que os botões ocupem toda a largura */
+    }
 
+    .btn-option {
+        width: 100%; /* Faz com que os botões ocupem toda a largura */
+        padding: 1rem; /* Ajusta o padding para botões em tela pequena */
+    }
+
+    .service {
+        width: 100%; /* Faz com que os serviços ocupem toda a largura */
+    }
+
+    .operation {
+        width: 100%; /* Faz com que as operações ocupem toda a largura */
+    }
+
+    h2 {
+        font-size: 1.5rem; /* Ajusta o tamanho da fonte do título em telas menores */
+    }
+
+    h3 {
+        font-size: 1.25rem; /* Ajusta o tamanho da fonte do subtítulo em telas menores */
+        padding: 1rem;
+    }
+
+    header img {
+        width: 100%;
+        max-width: 15rem;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .operations > div, .clients > div {
+        grid-template-columns: 1fr;
+    }
+    
+    .btn-nao-encontrou {
+        width: 100%;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    footer ul {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .services {
+        width: 100%;
+    }
+    .service {
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+    .operation {
+        width: 100%;
+    }
+
+    .button {
+        width: 100%;
+    }
+    .package-card {
+        width: 90%;
+    }
+}
 
 .clients > div {
     display: grid;
