@@ -1,1 +1,528 @@
+:root {
+    --primary-color: #940101;
+    --secondary-color: #ffebeb;
+    --font-primary: 'Roboto', sans-serif;
+    --font-secondary: 'Open Sans', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0 0;
+    padding: 0;
+    box-sizing: border-box; /* Added for better box model handling */
+}
+
+body {
+    font-family: var(--font-primary);
+    line-height: 1.6;
+    padding: 0;
+    background-color: #fff1f1;
+    align-items: center;
+    justify-content: center;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #940101;
+    color: #fff;
+    padding: 1rem;
+}
+
+header img {
+    width: 20rem;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    padding: 0;
+}
+
+nav a {
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+a:hover {
+    color: #ffebeb; /* Change color on hover */
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #000000;
+    border-radius: 3rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: #940101;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    padding: 0.5rem;
+    border: 2px solid #940101;
+    width: auto;
+    text-align: center;
+    border-radius: 0.5rem;
+}
+
+p {
+    text-align: justify;
+    justify-content: center;
+    margin-top: 1rem;
+    color: #444;
+}
+
+img {
+    width: 2rem;
+}
+
+main {
+    padding: 1rem;
+    align-items: center;
+}
+
+section {
+    padding: 1rem;
+}
+
+.operations > div {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.operation, .client {
+    transition: all 0.3s ease;
+    padding: 2rem;
+    border: #940101 2px solid;
+    border-radius: 2rem;
+}
+
+.operation:hover, .client:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.icon-operation {
+    width: 3rem;
+    margin-bottom: 1rem;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    display: flex; /* Added for alignment */
+    align-items: center; /* Center icon and text vertically */
+    justify-content: center; /* Center icon and text horizontally */
+    border-radius: 7px;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    width: 90%;
+    margin-top: 2rem;
+    transition: background-color 0.3s; /* Added transition for hover effect */
+}
+
+button img {
+    width: 1rem;
+}
+
+button:hover {
+    background-color: #2c2c2c;
+    cursor: pointer;
+    transform: scale(1.03);
+    transition: 0.5s;
+}
+
+.button-nao-encontrou {
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 0.5rem 1.5rem; /* Ajuste o padding conforme necessário */
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin-top: 0.5rem; /* Ajuste a margem superior para um valor menor */
+}
+
+.button-nao-encontrou:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+    transform: scale(1.05);
+}
+
+button.loading {
+    position: relative;
+    pointer-events: none;
+}
+
+button.loading::after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #fff;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.operation-selected {
+    border: 2px solid var(--primary-color);
+    padding: 3rem;
+    border-radius: 7px;
+    width: 80%;
+}
+
+.client img {
+    width: 5rem;
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.75rem;
+    border-radius: 50%;
+    display: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.back-to-top.visible {
+    display: block;
+}
+
+.back-to-top:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.buttons-options {
+    display: flex; /* Adiciona Flexbox */
+    justify-content: center; /* Centraliza os botões horizontalmente */
+    gap: 1rem; /* Espaçamento entre os botões */
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.btn-option {
+    padding: 1rem 3rem; /* Ajuste o padding conforme necessário */
+    border: none; /* Remova a borda se não for necessária */
+    border-radius: 5px; /* Bordas arredondadas */
+    background-color: var(--primary-color); /* Cor de fundo */
+    color: white; /* Cor do texto */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    transition: background-color 0.3s; /* Transição suave para hover */
+}
+
+.btn-option:hover {
+    background-color: #2c2c2c; /* Cor de fundo ao passar o mouse */
+}
+
+button {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    display: flex; /* Added for alignment */
+    align-items: center; /* Center icon and text vertically */
+    justify-content: center; /* Center icon and text horizontally */
+    border-radius: 7px;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    width: 90%;
+    margin-top: 2rem;
+    transition: background-color 0.3s; /* Added transition for hover effect */
+}
+
+@media (max-width: 768px) {
+    .buttons-options {
+        flex-direction: column; /* Alinha os botões em coluna em telas menores */
+        width: 100%; /* Faz com que os botões ocupem toda a largura */
+    }
+
+    .btn-option {
+        width: 100%; /* Faz com que os botões ocupem toda a largura */
+        padding: 1rem; /* Ajusta o padding para botões em tela pequena */
+    }
+
+    .service {
+        width: 100%; /* Faz com que os serviços ocupem toda a largura */
+    }
+
+    .operation {
+        width: 100%; /* Faz com que as operações ocupem toda a largura */
+    }
+
+    h2 {
+        font-size: 1.5rem; /* Ajusta o tamanho da fonte do título em telas menores */
+    }
+
+    h3 {
+        font-size: 1.25rem; /* Ajusta o tamanho da fonte do subtítulo em telas menores */
+        padding: 1rem;
+    }
+
+    header img {
+        width: 100%;
+        max-width: 15rem;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .operations > div, .clients > div {
+        grid-template-columns: 1fr;
+    }
+    
+    .btn-nao-encontrou {
+        width: 100%;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    footer ul {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .services {
+        width: 100%;
+    }
+    .service {
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+    .operation {
+        width: 100%;
+    }
+
+    .button {
+        width: 100%;
+    }
+}
+
+Run
+Copy code
+.services {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza os itens na coluna */
+    padding: 2rem; /* Adiciona um padding ao redor da seção */
+    background-color: #fff; /* Fundo branco para a seção */
+}
+
+.services-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centraliza os planos */
+    align-items: stretch; /* Faz com que todos os itens tenham a mesma altura */
+    max-width: 1200px; /* Limita a largura máxima da container */
+    margin: 0 auto; /* Centraliza a container */
+}
+
+.service {
+    display: flex; /* Adiciona Flexbox */
+    flex-direction: column; /* Alinha os itens verticalmente */
+    justify-content: space-between; /* Espaça os itens para ocupar todo o espaço */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra mais pronunciada */
+    background-color: #f9f9f9; /* Fundo claro para os planos */
+    border: 1px solid #ddd; /* Borda leve */
+    border-radius: 0.5rem; /* Bordas arredondadas */
+    padding: 2rem; /* 20px */
+    text-align: center;
+    color: #333; /* Cor do texto mais escura para melhor legibilidade */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave */
+    flex: 1 1 calc(30% - 2rem); /* Flexível, ocupa 25% menos margens */
+    margin: 1rem; /* Margem uniforme */
+    min-height: 250px; /* Altura mínima para garantir uniformidade */
+    align-items: center;
+}
+
+.service:hover {
+    transform: scale(1.05); /* Aumenta o tamanho do plano */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra mais intensa ao passar o mouse */
+}
+
+.service button {
+    margin-top: auto; /* Empurra o botão para a parte inferior */
+
+    transform: scale(1.05); /* Aumenta o tamanho do plano */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra mais intensa ao passar o mouse */
+}
+
+.service-icon {
+    width: 3rem;
+}
+
+.service-nao-encontrou {
+    display: flex; /* Adiciona Flexbox */
+    flex-direction: column; /* Alinha os itens em coluna */
+    align-items: center; /* Centraliza horizontalmente */
+    justify-content: center; /* Centraliza verticalmente */
+    text-align: center; /* Centraliza o texto */
+}
+
+@media (max-width: 1024px) {
+    .service {
+        flex: 1 1 calc(33.33% - 2rem); /* Ajusta a largura para 3 colunas em telas médias */
+    }
+    .package-card {
+        width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .service {
+        flex: 1 1 calc(50% - 2rem); /* Ajusta a largura para 2 colunas em telas menores */
+    }
+    .package-card {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .service {
+        flex: 1 1 100%; /* Ajusta a largura para 1 coluna em telas muito pequenas */
+    }
+    .package-card {
+        width: 90%;
+    }
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+.clients > div {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+}
+
+.client {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.client:hover {
+    transform: translateY(-5px);
+}
+
+blockquote {
+    font-style: italic;
+    color: #666;
+    padding: 1rem;
+    border-left: 3px solid var(--primary-color);
+    background-color: var(--secondary-color);
+    border-radius: 0 4px 4px 0;
+}
+
+.client img {
+    width: 2rem;
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 2rem;
+    text-align: center;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+footer a:hover {
+    opacity: 0.8;
+}
+
+footer img {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    transition: transform 0.3s;
+}
+
+footer img:hover {
+    transform: scale(1.1);
+}
+
+footer a:hover {
+    opacity: 0.8;
+}
+
+footer img {
+    width: 5rem;
+    height: auto;
+    vertical-align: middle;
+    transition: transform 0.3s;
+}
+
+footer img:hover {
+    transform: scale(1.1);
+}
+
+footer img {
+    width: 2rem;
+}
+
+
+
+
+
+
+
 
