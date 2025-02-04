@@ -1,114 +1,91 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Planos Black Raven Sec</title>
-    <link rel="stylesheet" href="css/style.css"> <!-- Link para o CSS -->
+    <meta name="description" content="Black Raven Sec - Segurança cibernética e investigações digitais">
+    <title>Black Raven Sec</title>
+    <link rel="stylesheet" href="/blackravensec_site/css/style.css">
 </head>
 <body>
     <header>
-        <img src="images/banner-1.png" alt="Banner" class="banner-1">
-        
-        <nav>
+        <img src="/blackravensec_site/images/banner-1--2.png" alt="Black Raven Security Banner">
+        <nav role="navigation">
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="servicos.html">Serviços</a></li>
+                <li><a href="services.html">Serviços</a></li>
                 <li><a href="blog.html">Blog</a></li>
             </ul>
         </nav>
     </header>
-
     <main>
-        <section class="options">
-            <h1 class="highlighted-title-black">SERVIÇOS</h1>
-            <div class=options-content>
-                <div class="options-container">
-                    <div class="option">
-                        <img class="option-icon" src="images/icons/magnifier.png">
-                        <h3>OPERAÇÕES DE INTELIGÊNCIA</h3>
-                        <p>Nossas operações de inteligência utilizam técnicas avançadas de Open Source Intelligence (OSINT) para coletar informações de pessoas em geral, empresas e organizações; investigar golpistas e fraudadores; rastrear indivíduos; autenticar veracidade de perfis online e muito mais</p>
-                        <button class="option-button" onclick="window.location.href='/operacoes-de-inteligencia/0-operacoes-de-inteligencia.html'"><img src="images/icons/eye.svg" alt="Ícone de Visualizar">VER
-                        </button>
-                    </div>
-
-                    <div class="option">
-                        <img class="option-icon" src="images/icons/icons8-bug-attack-with-warning-alert-isolated-on-white-background-96.png">
-                        <h3>OPERAÇÕES DE HACKING ÉTICO</h3>
-                        <p>Testamos e reforçamos a segurança do ambiente digital de pessoas, empresas e organizações com simulações realistas de ataques cibernéticos. Identificamos vulnerabilidades em redes, aplicações e sistemas, garantindo que esteja protegida contra invasões, vazamentos de dados e outras ameaças cibernéticas.
-                        </p>
-                        <button class="option-button"><img src="images/icons/eye.svg">VER</button>
-                    </div>
-
-                    <div class="option">
-                        <img class="option-icon" src="images/icons/icons8-social-engineering-96.png">
-                        <h3>OPERAÇÕES DE ENGENHARIA SOCIAL</h3>
-                        <p>A segurança digital vai além da tecnologia: testamos a resiliência humana contra ataques de engenharia social. Identificamos falhas em processos e fraquezas de colaboradores, conscientizamos equipes e criamos estratégias para mitigar riscos de phishing, manipulação psicológica e fraudes baseadas em interação humana.
-                        </p>
-                        <button class="option-button"><img src="images/icons/eye.svg">VER</button>
-                    </div>
+        <section class="operations">
+            <h1>SERVIÇOS</h1>
+            <div>
+                <div class="operation">
+                    <img class="icon-operation" src="/blackravensec_site/images/icons/operacoes/operacao-inteligencia-icon.png" alt="Ícone de Operações de Inteligência">
+                    <h2>OPERAÇÕES DE INTELIGÊNCIA</h2>
+                    <p>Nossas operações de inteligência utilizam técnicas avançadas de Open Source Intelligence (OSINT) para coletar informações de pessoas em geral, empresas e organizações; investigar golpistas e fraudadores; rastrear indivíduos; autenticar veracidade de perfis online e muito mais.</p>
+                    <button onclick="window.location.href='services.html'">
+                        <img src="images/icons/interface/eye-opened_64-white.svg" alt="Ícone de Visualizar">
+                        <span>VER SERVIÇOS</span> 
+                    </button>
+                </div>
+                <div class="operation">
+                    <img class="icon-operation" src="/blackravensec_site/images/icons/operacoes/icons8-bug-attack-with-warning-alert-isolated-on-white-background-96.png" alt="Ícone de Operações de Invasão">
+                    <h2>OPERAÇÕES DE INVASÃO</h2>
+                    <p>Testamos e reforçamos a segurança do ambiente digital de pessoas, empresas e organizações com simulações realistas de ataques cibernéticos. Identificamos vulnerabilidades em redes, aplicações e sistemas, garantindo que esteja protegida contra invasões, vazamentos de dados e outras ameaças cibernéticas.</p>
+                    <button onclick="window.location.href='/operacoes-de-inteligencia/0-operacoes-de-inteligencia.html'">
+                        <img src="/blackravensec_site/images/icons/interface/eye-opened_64-white.svg" alt="Ícone de Visualizar">
+                        <span>VER SERVIÇOS</span> 
+                    </button>
+                </div>
+                <div class="operation">
+                    <img class="icon-operation" src="/blackravensec_site/images/icons/operacoes/icons8-social-engineering-96.png" alt="Ícone de Operações de Engenharia Social">
+                    <h2>OPERAÇÕES DE ENGENHARIA SOCIAL</h2>
+                    <p>A segurança digital vai além da tecnologia: testamos a resiliência humana contra ataques de engenharia social. Identificamos falhas em processos e fraquezas de colaboradores, conscientizamos equipes e criamos estratégias para mitigar riscos de phishing, manipulação psicológica e fraudes baseadas em interação humana.</p>
+                    <button onclick="window.location.href='/operacoes-de-inteligencia/0-operacoes-de-inteligencia.html'">
+                        <img src="/blackravensec_site/images/icons/interface/eye-opened_64-white.svg" alt="Ícone de Visualizar">
+                        <span>VER SERVIÇOS</span> 
+                    </button>
                 </div>
             </div>
         </section>
-        
-        <div class="nao-encontrou">
-            <button class="button-nao-encontrou" onclick="window.location.href='https://wa.me/5511999999999'">FALE CONOSCO</button>
-            <p>Chame-nos no WhatsApp e faremos uma investigação personalizada para você!</p>
-        </div>
-
-        <section class="testimonials">
-            <h2 class="highlighted-title-end">Depoimentos de Clientes</h2>
-            <div class="feedback-content">
-                <div class="feedback-users">
-                    <div class="feedback-user">
-                        <img class="option-icon" src="images/icons/icons8-user-100.png">
-                        <h3>TEXEIRA DE FREITAS</h3>
-                        <blockquote>MEU DEPOIMENTO</blockquote>
-                    </div>
-                    <div class="feedback-user">
-                        <img class="option-icon" src="images/icons/icons8-user-100.png">
-                        <h3>TEXEIRA DE FREITAS</h3>
-                       <blockquote>MEU DEPOIMENTO</blockquote>
-                    </div>
-                    <div class="feedback-user">
-                        <img class="option-icon" src="images/icons/icons8-user-100.png">
-                        <h3>TEXEIRA DE FREITAS</h3>
-                        <blockquote>MEU DEPOIMENTO</blockquote>
-                    </div>
-                    <div class="feedback-user">
-                        <img class="option-icon" src="images/icons/icons8-user-100.png">
-                        <h3>TEXEIRA DE FREITAS</h3>
-                        <blockquote>MEU DEPOIMENTO</blockquote>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="cta">
-            <h3 class="highlighted-title-end">ENTRE EM CONTATO</h3>
+        <div class="service-nao-encontrou">
             <div class="nao-encontrou">
                 <button class="button-nao-encontrou" onclick="window.location.href='https://wa.me/5511999999999'">FALE CONOSCO</button>
                 <p>Chame-nos no WhatsApp e faremos uma investigação personalizada para você!</p>
             </div>
+        </div>
+        <section class="clients">
+            <h1>CLIENTES SATISFEITOS</h1>
+            <div>
+                <div class="client">
+                    <h3>CLIENTE 1</h3>
+                    <img src="/blackravensec_site/images/icons/icons8-user-100.png" alt="">
+                    <blockquote>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus libero omnis repellat nam temporibus provident. Molestias numquam provident expedita quas, autem voluptatibus voluptates minima aspernatur dignissimos laborum veritatis dicta nulla.</blockquote>
+                </div>
+                <div class="client">
+                    <h3>CLIENTE 2</h3>
+                    <img src="/blackravensec_site/images/icons/icons8-user-100.png" alt="">
+                    <blockquote>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates aperiam quia tempore molestiae excepturi odit culpa adipisci sit omnis accusamus qui, laudantium laborum, autem dolorem dolorum fugiat suscipit nam repellat.</blockquote>
+                </div>
+                <div class="client">
+                    <h3>CLIENTE 3</h3>
+                    <img src="/blackravensec_site/images/icons/icons8-user-100.png" alt="">
+                    <blockquote>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, fugiat quaerat earum veniam autem aut? Doloremque, molestiae! Sint molestiae ad voluptatibus, dolore iste tempore harum. Totam facilis tenetur corporis reprehenderit.</blockquote>
+                </div>
+            </div>
         </section>
     </main>
-
     <footer>
-        <nav>
-            <ul>
-                <li><a href="contato.html">Contato</a></li>
-                <li><a href="sobre.html">Sobre</a></li>
-            </ul>
-        </nav>
-
-        <p class="direitos-reservados">&copy; 2025 Black Raven Sec. Todos os direitos reservados.</p>
-
-        <div>
-            <img src="images/icons/icons8-whatsapp-100.png" class="social_media-icons-footer" alt="WhatsApp">
-            <img src="images/icons/icons8-instagram-100.png" class="social_media-icons-footer" alt="Instagram">
-        </div>
-
+        <ul>
+            <li>
+                <a href="/blackravensec_site/sobre.html">Sobre</a>
+                <a href="/blackravensec_site/contato.html">Contato</a>
+            </li>
+            <img src="/blackravensec_site/images/icons/interface/whatsapp-icon.png" alt="">
+            <img src="/blackravensec_site/images/icons/interface/instagram-icon.png" alt="">
+        </ul>
     </footer>
-    
 </body>
 </html>
