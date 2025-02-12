@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>Curso</title>
+    <style>
+        :root {
+            --primary-color: #940101;
+            --hover-color: #640000;
+        }
+
+        body {
+            background-color: rgba(0, 0, 0, 0.067);
+            font-family: 'Roboto', sans-serif;
+            scrollbar-width: thin;
+            scrollbar-color: var(--primary-color) #f1f1f1;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: var(--primary-color);
+            border-radius: 4px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.375rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--hover-color);
+        }
+
+        .btn-danger {
+            background-color: #ff811a;
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.375rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s;
+        }
+
+        .btn-danger:hover {
+            background-color: #d46000;
+        }
+
+        .placeholder::before {
+            content: attr(data-placeholder);
+            color: #9ca3af;
+            position: absolute;
+            pointer-events: none;
+            left: 0.75rem;
+            top: 0.75rem;
+        }
+
+        .placeholder:empty::before {
+            display: block;
+        }
+
+        .placeholder:not(:empty)::before {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto p-4">
+        <div class="flex flex-col md:flex-row justify-between gap-4 mb-4">
+            <div class="flex gap-2">
+                <button id="uploadFolderBtn" class="btn-primary">
+                    <i class="fas fa-folder-plus mr-2"></i>Enviar Pasta
+                </button>
+                <input type="file" id="uploadFolderInput" webkitdirectory directory multiple class="hidden">
+                <button id="uploadFileBtn" class="btn-primary">
+                    <i class="fas fa-file-upload mr-2"></i>Enviar Arquivo
+                </button>
+                <input type="file" id="uploadFileInput" class="hidden">
+            </div>
+        </div>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-[1fr_2fr_1fr] gap-4">
+            <!-- Left Sidebar -->
+            <div class="bg-white rounded-lg p-4 shadow h-[500px] overflow-hidden flex flex-col">
+                <div id="courseName" class="bg-gray-800 text-white p-2 rounded text-center font-bold mb-4">
+                    CURSO
+                </div>
+                <ul id="fileList" class="flex-1 overflow-y-auto space-y-2"></ul>
+            </div>
+
+            <!-- Main Content -->
+            <div class="bg-white rounded-lg p-4 shadow h-[500px] flex flex-col justify-between relative">
+                <div id="videoContainer" class="w-full relative hidden">
+                    <div id="videoTitle" class="text-center text-xl font-bold mb-2 uppercase"></div>
+                    <video id="videoPlayer" controls class="w-full rounded-lg shadow">
+                        <source id="videoSource" src="" type="video/mp4">
+                        Seu navegador não suporta a tag de vídeo.
+                    </video>
+                </div>
+                <div id="videoPlaceholder" class="text-gray-500 text-lg text-center flex-1 flex items-center justify-center">
+                    <i class="fas fa-video text-4xl mb-2 block"></i>
+                    Selecione um vídeo para reproduzir
+                </div>
+                <div id="videoControls" class="flex justify-between mt-4 space-x-2">
+                    <button id="prevLessonBtn" class="btn-primary flex-1">
+                        <i class="fas fa-step-backward mr-2"></i>Retroceder Aula
+                    </button>
+                    <button id="nextLessonBtn" class="btn-primary flex-1">
+                        <i class="fas fa-step-forward mr-2"></i>Avançar Aula
+                    </button>
+                </div>
+            </div>
+
+            <!-- Right Sidebar -->
+            <div class="bg-white rounded-lg p-4 shadow h-[500px] flex flex-col relative" style="width: 300px;">
+                <div class="flex gap-2 mb-4">
+                    <button class="btn-danger flex-1" id="saveNotesBtn">
+                        <i class="fas fa-save mr-2"></i>Salvar Notas
+                    </button>
+                    <button class="btn-primary flex-1" id="clearNotesBtn">
+                        <i class="fas fa-eraser mr-2"></i>Limpar
+                    </button>
+                </div>
+                <div class="flex gap-2 mb-4">
+                    <button class="btn-primary flex-1" id="boldTextBtn">
+                        <i class="fas fa-bold"></i>
+                    </button>
+                    <button class="btn-primary flex-1" id="italicTextBtn">
+                        <i class="fas fa-italic"></i>
+                    </button>
+                    <button class="btn-primary flex-1" id="underlineTextBtn">
+                        <i class="fas fa-underline"></i>
+                    </button>
+                </div>
+                <div contenteditable="true" id="notes" class="flex-1 w-full border p-2 rounded shadow resize-none overflow-auto placeholder" 
+                ></div>
+            </div>
+        </div>
+
+    <script>
+        (() => {
+            const dom = {
+                videoPlayer: document.getElementById('videoPlayer'),
+                videoSource: document.getElementById('videoSource'),
+                videoContainer: document.getElementById('videoContainer'),
+                videoTitle: document.getElementById('videoTitle'),
+                videoPlaceholder: document.getElementById('videoPlaceholder'),
+                fileList: document.getElementById('fileList'),
+                courseName: document.getElementById('courseName'),
+                notes: document.getElementById('notes'),
+                prevLessonBtn: document.getElementById('prevLessonBtn'),
+                nextLessonBtn: document.getElementById('nextLessonBtn'),
+                saveNotesBtn: document.getElementById('saveNotesBtn'),
+                clearNotesBtn: document.getElementById('clearNotesBtn'),
+                boldTextBtn: document.getElementById('boldTextBtn'),
+                italicTextBtn: document.getElementById('italicTextBtn'),
+                underlineTextBtn: document.getElementById('underlineTextBtn'),
+                uploadFileInput: document.getElementById('uploadFileInput')
+            };
+    
+            let currentFileIndex = -1;
+            let currentModuleIndex = -1;
+            let fileStructure = [];
+            const mediaType = 'video'; // Default media type
+    
+            // Initialize from localStorage
+            dom.notes.innerHTML = localStorage.getItem('courseNotes') || '';
+    
+            // Event listeners
+            document.getElementById('uploadFolderBtn').addEventListener('click', () => 
+                document.getElementById('uploadFolderInput').click());
+            
+            document.getElementById('uploadFileBtn').addEventListener('click', () => 
+                document.getElementById('uploadFileInput').click());
+    
+            document.getElementById('uploadFolderInput').addEventListener('change', handleFolderUpload);
+            document.getElementById('uploadFileInput').addEventListener('change', handleFileUpload);
+            dom.saveNotesBtn.addEventListener('click', saveNotesToFile);
+            dom.clearNotesBtn.addEventListener('click', () => 
+                dom.notes.innerHTML = '');
+            dom.boldTextBtn.addEventListener('click', () => 
+                document.execCommand('bold'));
+            dom.italicTextBtn.addEventListener('click', () => 
+                document.execCommand('italic'));
+            dom.underlineTextBtn.addEventListener('click', () => 
+                document.execCommand('underline'));
+    
+            dom.prevLessonBtn.addEventListener('click', () => navigateLesson(-1));
+            dom.nextLessonBtn.addEventListener('click', () => navigateLesson(1));
+    
+            // Video controls
+            dom.videoPlayer.addEventListener('play', () => 
+                dom.videoPlayer.classList.add('ring-2', 'ring-blue-500'));
+            
+            dom.videoPlayer.addEventListener('pause', () => 
+                dom.videoPlayer.classList.remove('ring-2', 'ring-blue-500'));
+    
+            // Handlers
+            function handleFolderUpload(event) {
+                const files = Array.from(event.target.files).filter(file => 
+                    file.type.startsWith(mediaType + '/'));
+                
+                if(files.length === 0) {
+                    alert(`Nenhum ${mediaType} encontrado na pasta!`);
+                    return;
+                }
+    
+                dom.courseName.textContent = files[0].webkitRelativePath.split('/')[0];
+                dom.fileList.innerHTML = '';
+                fileStructure = createFileStructure(files);
+                buildFileList(fileStructure);
+            }
+    
+            function handleFileUpload(event) {
+                const file = event.target.files[0];
+                if(file?.type.startsWith(mediaType + '/')) {
+                    playVideo(file);
+                }
+            }
+    
+            function buildFileList(files) {
+                Object.entries(files).reverse().forEach(([folder, subFiles], moduleIndex) => {
+                    const folderItem = createListItem(folder, 'bg-green-100');
+                    const subFileList = document.createElement('ul');
+                    subFileList.className = 'ml-4 space-y-2 hidden';
+                    subFiles.forEach((subFile, fileIndex) => {
+                        const subFileItem = createListItem(subFile.name, 'bg-gray-100');
+                        subFileItem.addEventListener('click', (event) => {
+                            event.stopPropagation();
+                            document.querySelectorAll('.file-item').forEach(item => 
+                                item.classList.remove('bg-blue-500', 'text-white'));
+                            subFileItem.classList.add('bg-blue-500', 'text-white');
+                            playVideo(subFile.file);
+                            subFileList.classList.remove('hidden');
+                            folderItem.classList.add('bg-blue-100');
+                            currentFileIndex = fileIndex;
+                            currentModuleIndex = moduleIndex;
+                        });
+                        subFileList.appendChild(subFileItem);
+                    });
+                    folderItem.appendChild(subFileList);
+                    folderItem.addEventListener('click', () => {
+                        subFileList.classList.toggle('hidden');
+                        folderItem.classList.toggle('bg-blue-100');
+                    });
+                    dom.fileList.appendChild(folderItem);
+                });
+            }
+    
+            function createFileStructure(files) {
+                const structure = {};
+                files.forEach(file => {
+                    const pathParts = file.webkitRelativePath.split('/');
+                    const folder = pathParts[1];
+                    if (!structure[folder]) {
+                        structure[folder] = [];
+                    }
+                    structure[folder].push({ name: pathParts.slice(2).join('/'), file });
+                });
+                return structure;
+            }
+    
+            function createListItem(name, bgColor) {
+                const li = document.createElement('li');
+                li.className = `file-item ${bgColor} p-2 rounded cursor-pointer 
+                              hover:bg-blue-100 transition-colors duration-200 flex items-center gap-2`;
+                li.innerHTML = `
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-file-${mediaType} text-blue-500"></i>
+                        <span>${name}</span>
+                    </div>
+                `;
+                return li;
+            }
+    
+            function playVideo(file) {
+                dom.videoSource.src = URL.createObjectURL(file);
+                dom.videoPlayer.load();
+                dom.videoTitle.textContent = file.name.split('.').slice(0, -1).join('.').toUpperCase();
+                dom.videoContainer.classList.remove('hidden');
+                dom.videoPlaceholder.classList.add('hidden');
+            }
+    
+            function navigateLesson(direction) {
+                const currentModule = Object.values(fileStructure)[currentModuleIndex];
+                const newIndex = currentFileIndex + direction;
+                if (newIndex >= 0 && newIndex < currentModule.length) {
+                    currentFileIndex = newIndex;
+                } else if (newIndex < 0 && currentModuleIndex > 0) {
+                    currentModuleIndex -= 1;
+                    currentFileIndex = Object.values(fileStructure)[currentModuleIndex].length - 1;
+                } else if (newIndex >= currentModule.length && currentModuleIndex < Object.keys(fileStructure).length - 1) {
+                    currentModuleIndex += 1;
+                    currentFileIndex = 0;
+                } else {
+                    return;
+                }
+                playVideo(Object.values(fileStructure)[currentModuleIndex][currentFileIndex].file);
+                highlightCurrentFile();
+            }
+    
+            function highlightCurrentFile() {
+                document.querySelectorAll('.file-item').forEach(item => 
+                    item.classList.remove('bg-blue-500', 'text-white', 'bg-blue-100'));
+                const currentModule = dom.fileList.children[currentModuleIndex];
+                const currentFile = currentModule.querySelector('ul').children[currentFileIndex];
+                currentFile.classList.add('bg-blue-500', 'text-white');
+                currentModule.classList.add('bg-blue-100');
+                currentModule.querySelector('ul').classList.remove('hidden');
+            }
+    
+            function saveNotesToFile() {
+                const notes = dom.notes.innerHTML;
+                const blob = new Blob([notes], { type: 'text/plain' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'notas.txt'; // Nome do arquivo
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url); // Libera a URL
+                alert('Notas salvas como notas.txt!');
+            }
+        })();
+    </script>
+</body>
+</html>
