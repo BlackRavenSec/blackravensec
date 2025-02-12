@@ -103,10 +103,10 @@
             </div>
             <div class="bg-white rounded-lg p-4 shadow h-[500px] flex flex-col relative" style="width: 300px;">
                 <div class="flex gap-2 mb-4">
-                    <button class="btn-danger flex-1" id="saveNotesBlockBtn" aria-label="Salvar Notas">
+                    <button class=" btn-danger flex-1" id="saveNotesBlockBtn" aria-label="Salvar Notas">
                         <i class="fas fa-save mr-2"></i>Salvar Notas
                     </button>
-                    <button class="btn-primary flex-1" id="clearNotesBlock Btn" aria-label="Limpar Notas">
+                    <button class="btn-primary flex-1" id="clearNotesBlockBtn" aria-label="Limpar Notas">
                         <i class="fas fa-eraser mr-2"></i>Limpar
                     </button>
                 </div>
@@ -196,12 +196,13 @@
                 }
             }
 
-            function saveNotesBlockToFile() {
+            function save NotesBlockToFile() {
                 const notes = dom.notesBlock.innerHTML;
                 const blob = new Blob([notes], { type: 'text/plain' });
                 const url = URL.createObjectURL(blob);
                 const a = document.createElement('a');
-                a.href = url a.download = 'bloco_de_notas.txt';
+                a.href = url; 
+                a.download = 'bloco_de_notas.txt';
                 document.body.appendChild(a);
                 a.click();
                 document.body.removeChild(a);
