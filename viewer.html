@@ -150,56 +150,6 @@
             </div>
         </div>
 
-        <!-- New Section Below Video -->
-        <div style="background-color: #323439; color:#fff" class="bg-white rounded-lg p-4 shadow mt-4">
-            <h2 class="text-2xl font-bold mb-4">Visualizador de Arquivos</h2>
-            <div class="flex gap-2 mb-4">
-                <button id="uploadPdfBtn" class="btn-primary">
-                    <i class="fas fa-file-pdf mr-2"></i>Enviar PDF
-                </button>
-                <input type="file" id="uploadPdfInput" accept="application/pdf" class="hidden">
-                <button id="uploadTextBtn" class="btn-primary">
-                    <i class="fas fa-file-alt mr-2"></i>Enviar Texto
-                </button>
-                <input type="file" id="uploadTextInput" accept="text/plain" class="hidden">
-                <button id="uploadImageBtn" class="btn-primary">
-                    <i class="fas fa-image mr-2"></i>Enviar Imagem
-                </button>
-                <input type="file" id="uploadImageInput" accept="image/*" class="hidden">
-            </div>
-            <div class="flex gap-4">
-                <div style="height: 50rem;" id="fileViewer" class="bg-gray-100 p-4 rounded shadow h-[500px] overflow-auto flex-1">
-                    <p class="text-gray-500 text-lg text-center flex-1 flex items-center justify-center">
-                        <i class="fas fa-file-alt text-4xl mb-2 block"></i>
-                        Selecione um arquivo para visualizar
-                    </p>
-                </div>
-                <div style="height: 50rem; margin-bottom: 5rem;" class="bg-white rounded-lg p-4 shadow h-[500px] flex flex-col relative" style="width: 300px;">
-                    <div class="flex gap-2 mb-4">
-                        <button class="btn-danger flex-1" id="saveNotesBlockBtn">
-                            <i class="fas fa-save mr-2"></i>Salvar Notas
-                        </button>
-                        <button class="btn-primary flex-1" id="clearNotesBlockBtn">
-                            <i class="fas fa-eraser mr-2"></i>Limpar
-                        </button>
-                    </div>
-                    <div class="flex gap-2 mb-4">
-                        <button class="btn-primary flex-1" id="boldTextBlockBtn">
-                            <i class="fas fa-bold"></i>
-                        </button>
-                        <button class="btn-primary flex-1" id="italicTextBlockBtn">
-                            <i class="fas fa-italic"></i>
-                        </button>
-                        <button class="btn-primary flex-1" id="underlineTextBlockBtn">
-                            <i class="fas fa-underline"></i>
-                        </button>
-                    </div>
-                    <div contenteditable="true" id="notesBlock" class="flex-1 w-full border p-2 rounded shadow resize-none overflow-auto placeholder" 
-                    ></div>
-                </div>
-            </div>
-        </div>
-
     <script>
         (() => {
             // Utility functions
