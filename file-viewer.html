@@ -77,79 +77,59 @@
         }
     </style>
 </head>
-<body style="background-color: rgb(15, 15, 15);" class="bg-gray-100">
-        <!-- New Section Below Video -->
-        <div style="background-color: #323439; color:#fff" class="bg-white rounded-lg p-4 shadow mt-4">
-            <h2 class="text-2xl font-bold mb-4">Visualizador de Arquivos</h2>
-            <div class="flex gap-2 mb-4">
-                <button id="uploadPdfBtn" class="btn-primary">
-                    <i class="fas fa-file-pdf mr-2"></i>Enviar PDF
-                </button>
-                <input type="file" id="uploadPdfInput" accept="application/pdf" class="hidden">
-                <button id="uploadTextBtn" class="btn-primary">
-                    <i class="fas fa-file-alt mr-2"></i>Enviar Texto
-                </button>
-                <input type="file" id="uploadTextInput" accept="text/plain" class="hidden">
-                <button id="uploadImageBtn" class="btn-primary">
-                    <i class="fas fa-image mr-2"></i>Enviar Imagem
-                </button>
-                <input type="file" id="uploadImageInput" accept="image/*" class="hidden">
+<body class="bg-gray-100">
+    <div class="bg-white rounded-lg p-4 shadow mt-4" style="background-color: #323439; color:#fff">
+        <h2 class="text-2xl font-bold mb-4">Visualizador de Arquivos</h2>
+        <div class="flex gap-2 mb-4">
+            <button id="uploadPdfBtn" class="btn-primary" aria-label="Enviar PDF">
+                <i class="fas fa-file-pdf mr-2"></i>Enviar PDF
+            </button>
+            <input type="file" id="uploadPdfInput" accept="application/pdf" class="hidden">
+            <button id="uploadTextBtn" class="btn-primary" aria-label="Enviar Texto">
+                <i class="fas fa-file-alt mr-2"></i>Enviar Texto
+            </button>
+            <input type="file" id="uploadTextInput" accept="text/plain" class="hidden">
+            <button id="uploadImageBtn" class="btn-primary" aria-label="Enviar Imagem">
+                <i class="fas fa-image mr-2"></i>Enviar Imagem
+            </button>
+            <input type="file" id="uploadImageInput" accept="image/*" class="hidden">
+        </div>
+        <div class="flex gap-4">
+            <div id="fileViewer" class="bg-gray-100 p-4 rounded shadow h-[500px] overflow-auto flex-1">
+                <p class="text-gray-500 text-lg text-center flex-1 flex items-center justify-center">
+                    <i class="fas fa-file-alt text-4xl mb-2 block"></i>
+                    Selecione um arquivo para visualizar
+                </p>
             </div>
-            <div class="flex gap-4">
-                <div style="height: 50rem;" id="fileViewer" class="bg-gray-100 p-4 rounded shadow h-[500px] overflow-auto flex-1">
-                    <p class="text-gray-500 text-lg text-center flex-1 flex items-center justify-center">
-                        <i class="fas fa-file-alt text-4xl mb-2 block"></i>
-                        Selecione um arquivo para visualizar
-                    </p>
+            <div class="bg-white rounded-lg p-4 shadow h-[500px] flex flex-col relative" style="width: 300px;">
+                <div class="flex gap-2 mb-4">
+                    <button class="btn-danger flex-1" id="saveNotesBlockBtn" aria-label="Salvar Notas">
+                        <i class="fas fa-save mr-2"></i>Salvar Notas
+                    </button>
+                    <button class="btn-primary flex-1" id="clearNotesBlock Btn" aria-label="Limpar Notas">
+                        <i class="fas fa-eraser mr-2"></i>Limpar
+                    </button>
                 </div>
-                <div style="height: 50rem; margin-bottom: 5rem;" class="bg-white rounded-lg p-4 shadow h-[500px] flex flex-col relative" style="width: 300px;">
-                    <div class="flex gap-2 mb-4">
-                        <button class="btn-danger flex-1" id="saveNotesBlockBtn">
-                            <i class="fas fa-save mr-2"></i>Salvar Notas
-                        </button>
-                        <button class="btn-primary flex-1" id="clearNotesBlockBtn">
-                            <i class="fas fa-eraser mr-2"></i>Limpar
-                        </button>
-                    </div>
-                    <div class="flex gap-2 mb-4">
-                        <button class="btn-primary flex-1" id="boldTextBlockBtn">
-                            <i class="fas fa-bold"></i>
-                        </button>
-                        <button class="btn-primary flex-1" id="italicTextBlockBtn">
-                            <i class="fas fa-italic"></i>
-                        </button>
-                        <button class="btn-primary flex-1" id="underlineTextBlockBtn">
-                            <i class="fas fa-underline"></i>
-                        </button>
-                    </div>
-                    <div contenteditable="true" id="notesBlock" class="flex-1 w-full border p-2 rounded shadow resize-none overflow-auto placeholder" 
-                    ></div>
+                <div class="flex gap-2 mb-4">
+                    <button class="btn-primary flex-1" id="boldTextBlockBtn" aria-label="Texto em Negrito">
+                        <i class="fas fa-bold"></i>
+                    </button>
+                    <button class="btn-primary flex-1" id="italicTextBlockBtn" aria-label="Texto em Itálico">
+                        <i class="fas fa-italic"></i>
+                    </button>
+                    <button class="btn-primary flex-1" id="underlineTextBlockBtn" aria-label="Texto Sublinhado">
+                        <i class="fas fa-underline"></i>
+                    </button>
                 </div>
+                <div contenteditable="true" id="notesBlock" class="flex-1 w-full border p-2 rounded shadow resize-none overflow-auto placeholder" data-placeholder="Escreva suas notas aqui..."></div>
             </div>
         </div>
+    </div>
 
     <script>
         (() => {
-            // Utility functions
             const dom = {
-                videoPlayer: document.getElementById('videoPlayer'),
-                videoSource: document.getElementById('videoSource'),
-                videoContainer: document.getElementById('videoContainer'),
-                videoTitle: document.getElementById('videoTitle'),
-                videoPlaceholder: document.getElementById('videoPlaceholder'),
-                fileList: document.getElementById('fileList'),
-                courseName: document.getElementById('courseName'),
-                notes: document.getElementById('notes'),
                 notesBlock: document.getElementById('notesBlock'),
-                prevLessonBtn: document.getElementById('prevLessonBtn'),
-                nextLessonBtn: document.getElementById('nextLessonBtn'),
-                saveNotesBtn: document.getElementById('saveNotesBtn'),
-                clearNotesBtn: document.getElementById('clearNotesBtn'),
-                saveNotesBlockBtn: document.getElementById('saveNotesBlockBtn'),
-                clearNotesBlockBtn: document.getElementById('clearNotesBlockBtn'),
-                boldTextBtn: document.getElementById('boldTextBtn'),
-                italicTextBtn: document.getElementById('italicTextBtn'),
-                underlineTextBtn: document.getElementById('underlineTextBtn'),
                 uploadPdfBtn: document.getElementById('uploadPdfBtn'),
                 uploadPdfInput: document.getElementById('uploadPdfInput'),
                 uploadTextBtn: document.getElementById('uploadTextBtn'),
@@ -157,92 +137,42 @@
                 uploadImageBtn: document.getElementById('uploadImageBtn'),
                 uploadImageInput: document.getElementById('uploadImageInput'),
                 fileViewer: document.getElementById('fileViewer'),
-                uploadFileInput: document.getElementById('uploadFileInput')
+                saveNotesBlockBtn: document.getElementById('saveNotesBlockBtn'),
+                clearNotesBlockBtn: document.getElementById('clearNotesBlockBtn'),
+                boldTextBlockBtn: document.getElementById('boldTextBlockBtn'),
+                italicTextBlockBtn: document.getElementById('italicTextBlockBtn'),
+                underlineTextBlockBtn: document.getElementById('underlineTextBlockBtn'),
             };
-    
-            let currentFileIndex = -1;
-            let currentModuleIndex = -1;
-            let fileStructure = [];
-            let mediaType = 'video'; // Default media type
-    
-            // Initialize from localStorage
-            dom.notes.innerHTML = localStorage.getItem('courseNotes') || '';
-    
+
             // Event listeners
-            document.getElementById('uploadFolderBtn').addEventListener('click', () => 
-                document.getElementById('uploadFolderInput').click());
-            
-            document.getElementById('uploadFileBtn').addEventListener('click', () => 
-                document.getElementById('uploadFileInput').click());
-    
-            document.getElementById('uploadFolderInput').addEventListener('change', handleFolderUpload);
-            document.getElementById('uploadFileInput').addEventListener('change', handleFileUpload);
-            dom.saveNotesBtn.addEventListener('click', saveNotesToFile);
-            dom.clearNotesBtn.addEventListener('click', () => 
-                dom.notes.innerHTML = '');
-            dom.boldTextBtn.addEventListener('click', () => 
-                document.execCommand('bold'));
-            dom.italicTextBtn.addEventListener('click', () => 
-                document.execCommand('italic'));
-            dom.underlineTextBtn.addEventListener('click', () => 
-                document.execCommand('underline'));
-    
-            dom.prevLessonBtn.addEventListener('click', () => navigateLesson(-1));
-            dom.nextLessonBtn.addEventListener('click', () => navigateLesson(1));
-    
-            dom.uploadPdfBtn.addEventListener('click', () => 
-                dom.uploadPdfInput.click());
-            dom.uploadTextBtn.addEventListener('click', () => 
-                dom.uploadTextInput.click());
-            dom.uploadImageBtn.addEventListener('click', () => 
-                dom.uploadImageInput.click());
-    
+            dom.uploadPdfBtn.addEventListener('click', () => dom.uploadPdfInput.click());
+            dom.uploadTextBtn.addEventListener('click', () => dom.uploadTextInput.click());
+            dom.uploadImageBtn.addEventListener('click', () => dom.uploadImageInput.click());
+
             dom.uploadPdfInput.addEventListener('change', handlePdfUpload);
             dom.uploadTextInput.addEventListener('change', handleTextUpload);
             dom.uploadImageInput.addEventListener('change', handleImageUpload);
-    
-            // Video controls
-            dom.videoPlayer.addEventListener('play', () => 
-                dom.videoPlayer.classList.add('ring-2', 'ring-blue-500'));
-            
-            dom.videoPlayer.addEventListener('pause', () => 
-                dom.videoPlayer.classList.remove('ring-2', 'ring-blue-500'));
-    
-            // Handlers
-            function handleFolderUpload(event) {
-                const files = Array.from(event.target.files).filter(file => 
-                    file.type.startsWith(mediaType + '/'));
-                
-                if(files.length === 0) {
-                    alert(`Nenhum ${mediaType} encontrado na pasta!`);
-                    return;
+
+            dom.saveNotesBlockBtn.addEventListener('click', saveNotesBlockToFile);
+            dom.clearNotesBlockBtn.addEventListener('click', () => {
+                if (confirm('Tem certeza de que deseja limpar as notas?')) {
+                    dom.notesBlock.innerHTML = '';
                 }
-    
-                dom.courseName.textContent = files[0].webkitRelativePath.split('/')[0];
-                dom.fileList.innerHTML = '';
-                fileStructure = createFileStructure(files);
-                buildFileList(fileStructure);
-            }
-    
-            function handleFileUpload(event) {
-                const file = event.target.files[0];
-                if(file?.type.startsWith(mediaType + '/')) {
-                    if (mediaType === 'video') {
-                        playVideo(file);
-                    } else if (mediaType === 'image') {
-                        displayImage(file);
-                    }
-                }
-            }
-    
+            });
+            dom.boldTextBlockBtn.addEventListener('click', () => document.execCommand('bold'));
+            dom.italicTextBlockBtn.addEventListener('click', () => document.execCommand('italic'));
+            dom.underlineTextBlockBtn.addEventListener('click', () => document.execCommand('underline'));
+
             function handlePdfUpload(event) {
                 const file = event.target.files[0];
                 if (file?.type === 'application/pdf') {
                     const fileURL = URL.createObjectURL(file);
                     dom.fileViewer.innerHTML = `<embed src="${fileURL}" type="application/pdf" width="100%" height="100%">`;
+                } else {
+                    alert('Por favor, selecione um arquivo PDF válido.');
                 }
             }
-    
+
             function handleTextUpload(event) {
                 const file = event.target.files[0];
                 if (file?.type === 'text/plain') {
@@ -251,6 +181,8 @@
                         dom.fileViewer.innerHTML = `<pre class="whitespace-pre-wrap">${e.target.result}</pre>`;
                     };
                     reader.readAsText(file);
+                } else {
+                    alert('Por favor, selecione um arquivo de texto válido.');
                 }
             }
 
@@ -259,145 +191,22 @@
                 if (file?.type.startsWith('image/')) {
                     const fileURL = URL.createObjectURL(file);
                     dom.fileViewer.innerHTML = `<img src="${fileURL}" alt="Imagem carregada" class="w-full h-auto">`;
-                }
-            }
-    
-            function buildFileList(files) {
-                Object.entries(files).reverse().forEach(([folder, subFiles], moduleIndex) => {
-                    const folderItem = createListItem(folder, 'bg-green-100');
-                    const subFileList = document.createElement('ul');
-                    subFileList.className = 'ml-4 space-y-2 hidden';
-                    subFiles.forEach((subFile, fileIndex) => {
-                        const subFileItem = createListItem(subFile.name, 'bg-gray-100');
-                        subFileItem.addEventListener('click', (event) => {
-                            event.stopPropagation();
-                            document.querySelectorAll('.file-item').forEach(item => 
-                                item.classList.remove('bg-blue-500', 'text-white'));
-                            subFileItem.classList.add('bg-blue-500', 'text-white');
-                            if (mediaType === 'video') {
-                                playVideo(subFile.file);
-                            } else if (mediaType === 'image') {
-                                displayImage(subFile.file);
-                            }
-                            subFileList.classList.remove('hidden');
-                            folderItem.classList.add('bg-blue-100');
-                            currentFileIndex = fileIndex;
-                            currentModuleIndex = moduleIndex;
-                        });
-                        subFileList.appendChild(subFileItem);
-                    });
-                    folderItem.appendChild(subFileList);
-                    folderItem.addEventListener('click', () => {
-                        subFileList.classList.toggle('hidden');
-                        folderItem.classList.toggle('bg-blue-100');
-                    });
-                    dom.fileList.appendChild(folderItem);
-                });
-            }
-    
-            function createFileStructure(files) {
-                const structure = {};
-                files.forEach(file => {
-                    const pathParts = file.webkitRelativePath.split('/');
-                    const folder = pathParts[1];
-                    if (!structure[folder]) {
-                        structure[folder] = [];
-                    }
-                    structure[folder].push({ name: pathParts.slice(2).join('/'), file });
-                });
-                return structure;
-            }
-    
-            function createListItem(name, bgColor) {
-                const li = document.createElement('li');
-                li.className = `file-item ${bgColor} p-2 rounded cursor-pointer 
-                              hover:bg-blue-100 transition-colors duration-200 flex items-center gap-2`;
-                li.innerHTML = `
-                    <div class="flex items-center gap-2">
-                        <i class="fas fa-file-${mediaType} text-blue-500"></i>
-                        <span>${name}</span>
-                    </div>
-                `;
-                return li;
-            }
-    
-            function playVideo(file) {
-                dom.videoSource.src = URL.createObjectURL(file);
-                dom.videoPlayer.load();
-                dom.videoTitle.textContent = file.name.split('.').slice(0, -1).join('.').toUpperCase();
-                dom.videoContainer.classList.remove('hidden');
-                dom.videoPlaceholder.classList.add('hidden');
-            }
-    
-            function displayImage(file) {
-                const fileURL = URL.createObjectURL(file);
-                dom.videoContainer.classList.add('hidden');
-                dom.videoPlaceholder.classList.remove('hidden');
-                dom.videoPlaceholder.innerHTML = `<img src="${fileURL}" alt="Imagem carregada" class="w-full h-auto">`;
-            }
-    
-            function navigateLesson(direction) {
-                const currentModule = Object.values(fileStructure)[currentModuleIndex];
-                const newIndex = currentFileIndex + direction;
-                if (newIndex >= 0 && newIndex < currentModule.length) {
-                    currentFileIndex = newIndex;
-                } else if (newIndex < 0 && currentModuleIndex > 0) {
-                    currentModuleIndex -= 1;
-                    currentFileIndex = Object.values(fileStructure)[currentModuleIndex].length - 1;
-                } else if (newIndex >= currentModule.length && currentModuleIndex < Object.keys(fileStructure).length - 1) {
-                    currentModuleIndex += 1;
-                    currentFileIndex = 0;
                 } else {
-                    return;
+                    alert('Por favor, selecione uma imagem válida.');
                 }
-                if (mediaType === 'video') {
-                    playVideo(Object.values(fileStructure)[currentModuleIndex][currentFileIndex].file);
-                } else if (mediaType === 'image') {
-                    displayImage(Object.values(fileStructure)[currentModuleIndex][currentFileIndex].file);
-                }
-                highlightCurrentFile();
             }
-    
-            function highlightCurrentFile() {
-                document.querySelectorAll('.file-item').forEach(item => 
-                    item.classList.remove('bg-blue-500', 'text-white', 'bg-blue-100'));
-                const currentModule = dom.fileList.children[currentModuleIndex];
-                const currentFile = currentModule.querySelector('ul').children[currentFileIndex];
-                currentFile.classList.add('bg-blue-500', 'text-white');
-                currentModule.classList.add('bg-blue-100');
-                currentModule.querySelector('ul').classList.remove('hidden');
-            }
-    
-            // Salvar notas do bloco de notas
-            dom.saveNotesBlockBtn.addEventListener('click', saveNotesBlockToFile);
 
             function saveNotesBlockToFile() {
-                const notes = notesBlock.innerHTML;
+                const notes = dom.notesBlock.innerHTML;
                 const blob = new Blob([notes], { type: 'text/plain' });
                 const url = URL.createObjectURL(blob);
                 const a = document.createElement('a');
-                a.href = url;
-                a.download = 'bloco_de_notas.txt'; // Nome do arquivo
+                a.href = url a.download = 'bloco_de_notas.txt';
                 document.body.appendChild(a);
                 a.click();
                 document.body.removeChild(a);
-                URL.revokeObjectURL(url); // Libera a URL
+                URL.revokeObjectURL(url);
                 alert('Notas do bloco salvas como bloco_de_notas.txt!');
-            }
-    
-            // Salvar notas do curso
-            function saveNotesToFile() {
-                const notes = dom.notes.innerHTML;
-                const blob = new Blob([notes], { type: 'text/plain' });
-                const url = URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                a.href = url;
-                a.download = 'notas.txt'; // Nome do arquivo
-                document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
-                URL.revokeObjectURL(url); // Libera a URL
-                alert('Notas salvas como notas.txt!');
             }
         })();
     </script>
