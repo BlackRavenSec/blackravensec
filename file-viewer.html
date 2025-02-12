@@ -103,7 +103,7 @@
             </div>
             <div class="bg-white rounded-lg p-4 shadow h-[500px] flex flex-col relative" style="width: 300px;">
                 <div class="flex gap-2 mb-4">
-                    <button class=" btn-danger flex-1" id="saveNotesBlockBtn" aria-label="Salvar Notas">
+                    <button class="btn-danger flex-1" id="saveNotesBlockBtn" aria-label="Salvar Notas">
                         <i class="fas fa-save mr-2"></i>Salvar Notas
                     </button>
                     <button class="btn-primary flex-1" id="clearNotesBlockBtn" aria-label="Limpar Notas">
@@ -144,24 +144,28 @@
                 underlineTextBlockBtn: document.getElementById('underlineTextBlockBtn'),
             };
 
-            // Event listeners
+            // Event listeners para upload de arquivos
             dom.uploadPdfBtn.addEventListener('click', () => dom.uploadPdfInput.click());
             dom.uploadTextBtn.addEventListener('click', () => dom.uploadTextInput.click());
             dom.uploadImageBtn.addEventListener('click', () => dom.uploadImageInput.click());
 
+            // Handlers de arquivos
             dom.uploadPdfInput.addEventListener('change', handlePdfUpload);
             dom.uploadTextInput.addEventListener('change', handleTextUpload);
             dom.uploadImageInput.addEventListener('change', handleImageUpload);
 
+            // Bloco de notas
             dom.saveNotesBlockBtn.addEventListener('click', saveNotesBlockToFile);
             dom.clearNotesBlockBtn.addEventListener('click', () => {
                 if (confirm('Tem certeza de que deseja limpar as notas?')) {
                     dom.notesBlock.innerHTML = '';
                 }
             });
-            dom.boldTextBlockBtn.addEventListener('click', () => document.execCommand('bold'));
-            dom.italicTextBlockBtn.addEventListener('click', () => document.execCommand('italic'));
-            dom.underlineTextBlockBtn.addEventListener('click', () => document.execCommand('underline'));
+
+            // Formatação de texto
+            dom.boldTextBlockBtn.addEventListener('click', () => formatText('bold'));
+            dom.italicTextBlockBtn.addEventListener('click', () => formatText('italic'));
+            dom.underlineTextBlockBtn.addEventListener('click', () => formatText('underline'));
 
             function handlePdfUpload(event) {
                 const file = event.target.files[0];
@@ -177,7 +181,7 @@
                 const file = event.target.files[0];
                 if (file?.type === 'text/plain') {
                     const reader = new FileReader();
-                    reader.onload = function(e) {
+                    reader.onload = (e) => {
                         dom.fileViewer.innerHTML = `<pre class="whitespace-pre-wrap">${e.target.result}</pre>`;
                     };
                     reader.readAsText(file);
@@ -196,18 +200,23 @@
                 }
             }
 
-            function save NotesBlockToFile() {
+            function formatText(command) {
+                document.execCommand(command, false, null);
+                dom.notesBlock.focus();
+            }
+
+            function saveNotesBlockToFile() {
                 const notes = dom.notesBlock.innerHTML;
                 const blob = new Blob([notes], { type: 'text/plain' });
                 const url = URL.createObjectURL(blob);
                 const a = document.createElement('a');
-                a.href = url; 
+                a.href = url;
                 a.download = 'bloco_de_notas.txt';
                 document.body.appendChild(a);
                 a.click();
                 document.body.removeChild(a);
                 URL.revokeObjectURL(url);
-                alert('Notas do bloco salvas como bloco_de_notas.txt!');
+                alert('Notas salvas com sucesso!');
             }
         })();
     </script>
