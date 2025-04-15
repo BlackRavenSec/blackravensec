@@ -6,6 +6,12 @@
     <title>LG InstaGrab - Download Vídeos Instagram</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        :root {
+            --primary: #405DE6;
+            --secondary: #833AB4;
+            --error: #FF4444;
+        }
+        
         * {
             margin: 0;
             padding: 0;
@@ -14,7 +20,7 @@
         }
 
         body {
-            background: linear-gradient(135deg, #405DE6, #833AB4);
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -30,6 +36,12 @@
             width: 100%;
             max-width: 500px;
             text-align: center;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         h1 {
@@ -42,13 +54,19 @@
             justify-content: center;
         }
 
+        .logo {
+            color: var(--secondary);
+            font-size: 1.2em;
+        }
+
         .input-group {
             margin: 25px 0;
+            position: relative;
         }
 
         input {
             width: 100%;
-            padding: 12px 20px;
+            padding: 12px 45px 12px 15px;
             border: 2px solid #ddd;
             border-radius: 8px;
             font-size: 14px;
@@ -57,18 +75,27 @@
 
         input:focus {
             outline: none;
-            border-color: #833AB4;
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(131, 58, 180, 0.2);
+        }
+
+        .input-icon {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--secondary);
         }
 
         button {
-            background: linear-gradient(45deg, #405DE6, #833AB4);
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
             color: white;
             border: none;
             padding: 12px 30px;
             border-radius: 8px;
             font-size: 14px;
             cursor: pointer;
-            transition: transform 0.3s;
+            transition: all 0.3s;
             display: inline-flex;
             align-items: center;
             gap: 8px;
@@ -76,17 +103,25 @@
 
         button:hover {
             transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        button:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none !important;
         }
 
         .result {
             margin-top: 20px;
             display: none;
+            animation: fadeIn 0.5s ease;
         }
 
         .loading {
             display: none;
             margin: 15px 0;
-            color: #405DE6;
+            color: var(--primary);
         }
 
         .fa-spinner {
@@ -99,21 +134,59 @@
         }
 
         .error {
-            color: #ff4444;
+            color: var(--error);
             margin-top: 10px;
             display: none;
+            animation: shake 0.5s;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            20%, 60% { transform: translateX(-5px); }
+            40%, 80% { transform: translateX(5px); }
+        }
+
+        .video-preview {
+            width: 100%;
+            border-radius: 8px;
+            margin-top: 15px;
+            display: none;
+        }
+
+        .quality-options {
+            margin: 15px 0;
+            display: none;
+        }
+
+        .quality-btn {
+            background: white;
+            color: var(--secondary);
+            border: 1px solid var(--secondary);
+            margin: 5px;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .quality-btn:hover, .quality-btn.active {
+            background: var(--secondary);
+            color: white;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1><i class="fab fa-instagram"></i>LG InstaGrab</h1>
+        <h1><span class="logo">LG</span> InstaGrab</h1>
+        <p>Baixe vídeos do Instagram em alta qualidade</p>
         
         <div class="input-group">
             <input type="text" id="urlInput" placeholder="Cole o link do Instagram aqui...">
+            <div class="input-icon"><i class="fab fa-instagram"></i></div>
         </div>
         
-        <button onclick="downloadVideo()">
+        <button id="downloadBtn" onclick="handleDownload()">
             <i class="fas fa-download"></i>
             Baixar Agora
         </button>
@@ -123,63 +196,151 @@
             Processando...
         </div>
 
+        <div class="error" id="error">
+            Link inválido ou vídeo privado! Tente novamente.
+        </div>
+
         <div class="result" id="result">
+            <video controls class="video-preview" id="videoPreview"></video>
+            
+            <div class="quality-options" id="qualityOptions">
+                <p>Selecione a qualidade:</p>
+                <!-- Opções serão preenchidas dinamicamente -->
+            </div>
+            
             <a id="downloadLink" target="_blank">
                 <button style="margin-top: 15px;">
                     <i class="fas fa-file-download"></i>
-                    Clique para Baixar
+                    Baixar Vídeo
                 </button>
             </a>
-        </div>
-
-        <div class="error" id="error">
-            Link inválido ou vídeo privado!
         </div>
     </div>
 
     <script>
-        async function downloadVideo() {
-            const url = document.getElementById('urlInput').value;
-            const loading = document.getElementById('loading');
-            const error = document.getElementById('error');
-            const result = document.getElementById('result');
+        // Elementos DOM
+        const urlInput = document.getElementById('urlInput');
+        const downloadBtn = document.getElementById('downloadBtn');
+        const loading = document.getElementById('loading');
+        const error = document.getElementById('error');
+        const result = document.getElementById('result');
+        const videoPreview = document.getElementById('videoPreview');
+        const qualityOptions = document.getElementById('qualityOptions');
+        const downloadLink = document.getElementById('downloadLink');
+
+        // Serviço proxy alternativo (pode precisar de atualização periódica)
+        const INSTA_API = 'https://corsproxy.io/?https://www.instagram.com';
+        
+        // Manipulador de download
+        async function handleDownload() {
+            const url = urlInput.value.trim();
             
             if (!isValidUrl(url)) {
                 showError();
                 return;
             }
 
-            loading.style.display = 'block';
-            error.style.display = 'none';
-            result.style.display = 'none';
-
             try {
-                const apiUrl = `https://api.savefrom.net/service/parse?url=${encodeURIComponent(url)}`;
-                const response = await fetch(apiUrl);
-                const data = await response.json();
+                startLoading();
                 
-                const videoUrl = data.formats
-                    .filter(f => f.format_id === 'mp4')
-                    .sort((a,b) => b.quality - a.quality)[0].url;
-
-                document.getElementById('downloadLink').href = videoUrl;
-                result.style.display = 'block';
+                // Extrai o código curto do vídeo
+                const shortcode = extractShortcode(url);
+                if (!shortcode) throw new Error('Link inválido');
+                
+                // Busca as informações do post
+                const postInfo = await fetchPostInfo(shortcode);
+                if (!postInfo) throw new Error('Vídeo não encontrado');
+                
+                // Exibe o vídeo e opções de qualidade
+                displayVideo(postInfo);
+                
             } catch (err) {
+                console.error(err);
                 showError();
             } finally {
-                loading.style.display = 'none';
+                stopLoading();
             }
         }
 
+        // Validação de URL
         function isValidUrl(url) {
             return /https?:\/\/(www\.)?instagram\.com\/(p|reel|tv)\/[a-zA-Z0-9_-]+\/?/.test(url);
         }
 
-        function showError() {
-            document.getElementById('error').style.display = 'block';
-            document.getElementById('loading').style.display = 'none';
-            document.getElementById('result').style.display = 'none';
+        // Extrai o shortcode do vídeo
+        function extractShortcode(url) {
+            const matches = url.match(/\/(p|reel|tv)\/([^\/?]+)/);
+            return matches ? matches[2] : null;
         }
+
+        // Busca informações do post
+        async function fetchPostInfo(shortcode) {
+            try {
+                const response = await fetch(`${INSTA_API}/p/${shortcode}/?__a=1&__d=dis`);
+                const data = await response.json();
+                
+                // Verifica se é vídeo
+                const isVideo = data.graphql.shortcode_media.is_video;
+                if (!isVideo) throw new Error('Não é um vídeo');
+                
+                // Obtém as URLs disponíveis
+                const videoUrl = data.graphql.shortcode_media.video_url;
+                const displayUrl = data.graphql.shortcode_media.display_url;
+                
+                return {
+                    shortcode,
+                    videoUrl,
+                    displayUrl,
+                    username: data.graphql.shortcode_media.owner.username,
+                    caption: data.graphql.shortcode_media.edge_media_to_caption?.edges[0]?.node?.text || ''
+                };
+                
+            } catch (err) {
+                console.error('Erro ao buscar informações:', err);
+                return null;
+            }
+        }
+
+        // Exibe o vídeo e opções de download
+        function displayVideo(postInfo) {
+            // Configura o preview
+            videoPreview.src = postInfo.videoUrl;
+            videoPreview.style.display = 'block';
+            videoPreview.play();
+            
+            // Configura o link de download
+            downloadLink.href = postInfo.videoUrl;
+            downloadLink.download = `instagram_${postInfo.shortcode}.mp4`;
+            
+            // Exibe o resultado
+            error.style.display = 'none';
+            result.style.display = 'block';
+        }
+
+        // Mostra erro
+        function showError() {
+            error.style.display = 'block';
+            result.style.display = 'none';
+        }
+
+        // Inicia loading
+        function startLoading() {
+            downloadBtn.disabled = true;
+            loading.style.display = 'block';
+            error.style.display = 'none';
+            result.style.display = 'none';
+        }
+
+        // Para loading
+        function stopLoading() {
+            downloadBtn.disabled = false;
+            loading.style.display = 'none';
+        }
+
+        // Event listener para Enter
+        urlInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') handleDownload();
+        });
     </script>
 </body>
 </html>
