@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InstaGrab - Download HD Videos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .logo {
+            width: 120px;
+            margin-bottom: 30px;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 2.2em;
+        }
+
+        .input-group {
+            position: relative;
+            margin: 25px 0;
+        }
+
+        input {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #eee;
+            border-radius: 12px;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #833ab4;
+            box-shadow: 0 0 10px rgba(131, 58, 180, 0.2);
+        }
+
+        button {
+            background: linear-gradient(45deg, #833ab4, #fd1d1d);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 12px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .preview-container {
+            margin-top: 30px;
+            display: none;
+        }
+
+        .preview-video {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .loading {
+            display: none;
+            margin: 20px 0;
+        }
+
+        .fa-spinner {
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .error {
+            color: #ff4444;
+            margin-top: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" class="logo" alt="Instagram Logo">
+        <h1>InstaGrab</h1>
+        <p>Cole o link do vídeo do Instagram abaixo</p>
+        
+        <div class="input-group">
+            <input type="text" id="urlInput" placeholder="https://www.instagram.com/p/...">
+        </div>
+        
+        <button onclick="processUrl()">
+            <i class="fas fa-download"></i>
+            Baixar Vídeo
+        </button>
+
+        <div class="loading">
+            <i class="fas fa-spinner"></i>
+            Processando...
+        </div>
+
+        <div class="preview-container">
+            <video controls class="preview-video"></video>
+            <button onclick="downloadVideo()" style="margin-top: 15px;">
+                <i class="fas fa-file-download"></i>
+                Download HD
+            </button>
+        </div>
+
+        <div class="error" id="errorMessage">
+            Link inválido! Por favor, verifique o URL.
+        </div>
+    </div>
+
+    <script>
+        function isValidInstagramUrl(url) {
+            return /https?:\/\/(www\.)?instagram\.com\/(p|reel)\/[a-zA-Z0-9_-]+\/?/.test(url);
+        }
+
+        function processUrl() {
+            const url = document.getElementById('urlInput').value;
+            const loading = document.querySelector('.loading');
+            const error = document.getElementById('errorMessage');
+            const preview = document.querySelector('.preview-container');
+
+            if (!isValidInstagramUrl(url)) {
+                error.style.display = 'block';
+                preview.style.display = 'none';
+                return;
+            }
+
+            error.style.display = 'none';
+            loading.style.display = 'block';
+            preview.style.display = 'none';
+
+            // Simulação de processamento (substituir por chamada API real)
+            setTimeout(() => {
+                loading.style.display = 'none';
+                preview.style.display = 'block';
+                document.querySelector('.preview-video').src = 'placeholder-video.mp4'; // URL do vídeo
+            }, 2000);
+        }
+
+        function downloadVideo() {
+            // Implementar lógica real de download aqui
+            alert('Download iniciado! (funcionalidade simulada)');
+        }
+    </script>
+</body>
+</html>
